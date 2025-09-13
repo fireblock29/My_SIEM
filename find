@@ -1,9 +1,0 @@
-Running in packet dump mode
-
-        --== Initializing Snort ==--
-Initializing Output Plugins!
-Snort BPF option: / -name unicode.map
-pcap DAQ configured to passive.
-Acquiring network traffic from "eth0".
-ERROR: Can't set DAQ BPF filter to '/ -name unicode.map' (pcap_daq_set_filter: pcap_compile: syntax error)!
-Fatal Error, Quitting..
