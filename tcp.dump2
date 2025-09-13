@@ -1,0 +1,63 @@
+19:56:07.523293 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:09.213250 IP debian-target.51931 > lucas-HP-Pavilion.domain: 60166+ A? telemetry.elastic.co. (38)
+19:56:09.213576 IP lucas-HP-Pavilion.domain > debian-target.51931: 60166 1/0/0 A 34.95.113.255 (54)
+19:56:09.213848 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [S], seq 2001894283, win 64240, options [mss 1460,sackOK,TS val 1722280161 ecr 0,nop,wscale 7], length 0
+19:56:09.443900 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:09.513773 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [S.], seq 1210625927, ack 2001894284, win 65535, options [mss 1412,sackOK,TS val 3727515914 ecr 1722280161,nop,wscale 8], length 0
+19:56:09.514015 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 1722280462 ecr 3727515914], length 0
+19:56:09.515032 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 1:694, ack 1, win 502, options [nop,nop,TS val 1722280462 ecr 3727515914], length 693
+19:56:09.795132 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [.], ack 694, win 1048, options [nop,nop,TS val 3727515947 ecr 1722280462], length 0
+19:56:09.795133 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [P.], seq 1:220, ack 694, win 1048, options [nop,nop,TS val 3727515956 ecr 1722280462], length 219
+19:56:09.795133 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [P.], seq 1:220, ack 694, win 1048, options [nop,nop,TS val 3727516193 ecr 1722280462], length 219
+19:56:09.795281 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 220, win 501, options [nop,nop,TS val 1722280743 ecr 3727515956], length 0
+19:56:09.795310 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 220, win 501, options [nop,nop,TS val 1722280743 ecr 3727516193,nop,nop,sack 1 {1:220}], length 0
+19:56:09.795826 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 694:1086, ack 220, win 501, options [nop,nop,TS val 1722280743 ecr 3727516193], length 392
+19:56:10.100441 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [.], ack 1086, win 1047, options [nop,nop,TS val 3727516230 ecr 1722280743], length 0
+19:56:10.100442 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [P.], seq 220:1207, ack 1086, win 1047, options [nop,nop,TS val 3727516430 ecr 1722280743], length 987
+19:56:10.100442 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [F.], seq 1207, ack 1086, win 1047, options [nop,nop,TS val 3727516430 ecr 1722280743], length 0
+19:56:10.100592 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 1208, win 524, options [nop,nop,TS val 1722281048 ecr 3727516430], length 0
+19:56:10.102190 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 1086:1110, ack 1208, win 524, options [nop,nop,TS val 1722281050 ecr 3727516430], length 24
+19:56:10.105227 IP debian-target.54494 > 255.113.95.34.bc.googleusercontent.com.https: Flags [F.], seq 1110, ack 1208, win 524, options [nop,nop,TS val 1722281053 ecr 3727516430], length 0
+19:56:10.110471 IP debian-target.41309 > lucas-HP-Pavilion.domain: 32686+ A? telemetry.elastic.co. (38)
+19:56:10.110744 IP lucas-HP-Pavilion.domain > debian-target.41309: 32686 1/0/0 A 34.95.113.255 (54)
+19:56:10.111226 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [S], seq 4238891714, win 64240, options [mss 1460,sackOK,TS val 1722281059 ecr 0,nop,wscale 7], length 0
+19:56:10.179387 IP debian-target.59981 > lucas-HP-Pavilion.domain: 13920+ PTR? 1.122.168.192.in-addr.arpa. (44)
+19:56:10.407496 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54494: Flags [R], seq 1210627135, win 0, length 0
+19:56:10.407496 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [S.], seq 1551267746, ack 4238891715, win 65535, options [mss 1412,sackOK,TS val 3616623146 ecr 1722281059,nop,wscale 8], length 0
+19:56:10.407641 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 1722281355 ecr 3616623146], length 0
+19:56:10.408452 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 1:694, ack 1, win 502, options [nop,nop,TS val 1722281356 ecr 3616623146], length 693
+19:56:10.410155 IP lucas-HP-Pavilion.domain > debian-target.59981: 13920* 2/0/0 PTR lucas-HP-Pavilion., PTR lucas-HP-Pavilion.local. (112)
+19:56:10.410435 IP debian-target.43177 > lucas-HP-Pavilion.domain: 55092+ PTR? 95.122.168.192.in-addr.arpa. (45)
+19:56:10.410571 IP lucas-HP-Pavilion.domain > debian-target.43177: 55092* 1/0/0 PTR debian-target. (72)
+19:56:10.410753 IP debian-target.49162 > lucas-HP-Pavilion.domain: 9468+ PTR? 255.113.95.34.in-addr.arpa. (44)
+19:56:10.478410 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [.], ack 694, win 1048, options [nop,nop,TS val 3616623450 ecr 1722281356], length 0
+19:56:10.478410 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [P.], seq 1:220, ack 694, win 1048, options [nop,nop,TS val 3616623460 ecr 1722281356], length 219
+19:56:10.478528 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 220, win 501, options [nop,nop,TS val 1722281426 ecr 3616623460], length 0
+19:56:10.478613 IP lucas-HP-Pavilion.domain > debian-target.49162: 9468 1/0/0 PTR 255.113.95.34.bc.googleusercontent.com. (96)
+19:56:10.479026 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 694:1484, ack 220, win 501, options [nop,nop,TS val 1722281427 ecr 3616623460], length 790
+19:56:10.716664 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [.], ack 1484, win 1045, options [nop,nop,TS val 3616623519 ecr 1722281427], length 0
+19:56:10.716665 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [P.], seq 220:1245, ack 1484, win 1045, options [nop,nop,TS val 3616623680 ecr 1722281427], length 1025
+19:56:10.716665 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [F.], seq 1245, ack 1484, win 1045, options [nop,nop,TS val 3616623680 ecr 1722281427], length 0
+19:56:10.716791 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [.], ack 1246, win 524, options [nop,nop,TS val 1722281664 ecr 3616623680], length 0
+19:56:10.717685 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [P.], seq 1484:1508, ack 1246, win 524, options [nop,nop,TS val 1722281665 ecr 3616623680], length 24
+19:56:10.719266 IP debian-target.54510 > 255.113.95.34.bc.googleusercontent.com.https: Flags [F.], seq 1508, ack 1246, win 524, options [nop,nop,TS val 1722281667 ecr 3616623680], length 0
+19:56:10.818191 IP 255.113.95.34.bc.googleusercontent.com.https > debian-target.54510: Flags [R], seq 1551268992, win 0, length 0
+19:56:11.492775 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:13.300959 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [S], seq 3152385650, win 64240, options [mss 1460,sackOK,TS val 1913400967 ecr 0,nop,wscale 7], length 0
+19:56:13.301105 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [S.], seq 3335011670, ack 3152385651, win 65160, options [mss 1460,sackOK,TS val 974504655 ecr 1913400967,nop,wscale 7], length 0
+19:56:13.301242 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [.], ack 1, win 502, options [nop,nop,TS val 1913400967 ecr 974504655], length 0
+19:56:13.301378 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [P.], seq 1:431, ack 1, win 502, options [nop,nop,TS val 1913400967 ecr 974504655], length 430: HTTP: GET /index.php?exploit=1 HTTP/1.1
+19:56:13.301497 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [.], ack 431, win 506, options [nop,nop,TS val 974504655 ecr 1913400967], length 0
+19:56:13.334337 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [P.], seq 1:244, ack 431, win 506, options [nop,nop,TS val 974504688 ecr 1913400967], length 243: HTTP: HTTP/1.1 200 OK
+19:56:13.334505 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [.], ack 244, win 501, options [nop,nop,TS val 1913401000 ecr 974504688], length 0
+19:56:13.404013 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [P.], seq 431:883, ack 244, win 501, options [nop,nop,TS val 1913401070 ecr 974504688], length 452: HTTP: GET /favicon.ico HTTP/1.1
+19:56:13.406354 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [P.], seq 244:738, ack 883, win 503, options [nop,nop,TS val 974504760 ecr 1913401070], length 494: HTTP: HTTP/1.1 404 Not Found
+19:56:13.406524 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [.], ack 738, win 501, options [nop,nop,TS val 1913401072 ecr 974504760], length 0
+19:56:13.477670 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:15.526829 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:17.511544 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+19:56:18.411997 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [F.], seq 738, ack 883, win 503, options [nop,nop,TS val 974509765 ecr 1913401072], length 0
+19:56:18.412738 IP lucas-HP-Pavilion.48638 > debian-target.http-alt: Flags [F.], seq 883, ack 739, win 501, options [nop,nop,TS val 1913406076 ecr 974509765], length 0
+19:56:18.412896 IP debian-target.http-alt > lucas-HP-Pavilion.48638: Flags [.], ack 884, win 503, options [nop,nop,TS val 974509766 ecr 1913406076], length 0
+19:56:19.496721 STP 802.1d, Config, Flags [none], bridge-id 8000.52:54:00:aa:5b:c8.8001, length 35
+

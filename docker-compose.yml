@@ -1,0 +1,90 @@
+version: "3.8"
+networks:
+  elk:
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD", "curl", "-s", "http://localhost:9200/_cluster/health?wait_for_status=yellow"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.9.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_HOST=0.0.0.0
+    networks:
+      - elk
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+  syslog-ng:
+    image: linuxserver/syslog-ng
+    container_name: syslog-ng
+    volumes:
+      - ./configs/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf:ro
+      - ./logs/snort:/var/log/snort  # dossier partagé pour que filebeat puisse lire les logs
+    network_mode: bridge
+    ports:
+      - "514:514/udp"
+      - "601:601/tcp"
+    restart: unless-stopped
+
+  snort:
+    image: frapsoft/snort  # test/dev image (voir README)
+    container_name: snort
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: "host"
+    volumes:
+      - ./configs/snort:/etc/snort
+      - ./logs/snort:/var/log/snort
+    command: ["-c", "/etc/snort/snort.conf", "-i", "any"]
+
+  web:
+    image: php:8.1-apache
+    container_name: web
+    volumes:
+      - ./configs/web/:/var/www/html/:ro
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.9.0
+    container_name: filebeat
+    user: root
+    volumes:
+      - ./configs/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./logs/snort:/var/log/snort:ro
+    depends_on:
+      - elasticsearch
+#    network_mode: host
+    networks:
+      - elk
+    restart: unless-stopped
+
+volumes:
+  esdata:
