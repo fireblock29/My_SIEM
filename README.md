@@ -23,7 +23,7 @@ This project ships a minimal SIEM:
 - **Shipper**: Filebeat (tails Snort alerts and sends to Elasticsearch).
 - **Storage**: Elasticsearch (single-node, xpack security disabled).
 - **UI**: Kibana.
-- **Syslog collector (optional today)**: syslog-ng (listens on 514/udp, 601/tcp to file; not shipped to ES by default).
+- **Syslog collector**: syslog-ng (listens on 514/udp, 601/tcp to file; not shipped to ES by default).
 - **Test app**: Simple PHP app on `http://VM_IP:8080` to trigger HTTP rules.
 
 Everything is orchestrated with Docker Compose.
@@ -46,7 +46,6 @@ flowchart LR
 Key links:
 - Snort writes to `./logs/snort/` (host). Filebeat reads that same path and ships to Elasticsearch.
 - Kibana connects to Elasticsearch and you explore indices `filebeat-*`.
-- syslog-ng currently writes local files only (for future expansion).
 
 
 ## Services
@@ -76,7 +75,6 @@ Defined in `docker-compose.yml`:
   - Ports: `514/udp`, `601/tcp`
   - Config: `./configs/syslog-ng.conf`
   - Writes host logs under `/var/log/hostlogs/$HOST_FROM.log` (inside the container)
-  - Note: Not yet shipped to Elasticsearch by default in this project.
 
 - **web** (`php:8.1-apache`)
   - Ports: `8080:80`
@@ -282,8 +280,8 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
   
   ![Kibana "message" field](./imgs/image-9.png)
 
-- syslog-ng (optional today): `configs/syslog-ng.conf`
-  - Listens on 514/udp and 601/tcp, writes to `/var/log/hostlogs/$HOST_FROM.log` (container FS).
+- syslog-ng: `configs/syslog-ng.conf`
+  - Listens on 514/udp and 601/tcp, writes to `/var/log/hostlogs/$HOST_FROM.log`.
 
 
 
