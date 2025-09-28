@@ -2,40 +2,16 @@
 alert icmp any any -> any any (msg:"ICMP Ping detected"; sid:1000001; rev:1;)
 
 # Détection d'accès à index.php avec param exploit
-#alert tcp any any -> any any (msg:"Possible exploit param detected"; content:"exploit="; sid:1000002; rev:1;)
-#alert tcp any any -> any [80,8080] (msg:"TEST HTTP exploit in URI"; flow:to_server,established; pcre:"/GET\s+\/[^\r\n]*\?exploit=/Ui"; sid:1009001; rev:1;)
 alert tcp any any -> any [80,8080] ( \
     msg:"TEST HTTP exploit in URI"; \
     content:"exploit="; http_uri; \
-    sid:1009001; rev:2; )
-
-
-
-# Detect HTTP requests to index.php that include a parameter named "exploit" (raw or URL-encoded)
-# Règle minimale : détecte "exploit=" dans la requête HTTP (URI ou body)
-#alert tcp any any -> any any ( \
-#    msg:"WEB Possible exploit param detected (simple)"; \
-#    flow:to_server,established; \
-#    content:"exploit="; nocase; \
-#    sid:1000100; rev:1; )
-
-
+    sid:1000002; rev:2; )
 
 # Détection d'un scan Nmap TCP SYN
 alert tcp any any -> any any (flags:S; msg:"Nmap TCP SYN Scan"; sid:1000003; rev:1;)
 
-#alert tcp any any -> $HOME_NET any (msg:"Nmap SYN Scan detected"; flags:S; threshold:type both, track by_src, count 5, seconds 60; sid:1000004; rev:1;)
-
-
-# SSH
-alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established; content:"SSH-"; nocase; sid:1009004; rev:1;)
-
-# HTTP Exfiltration
-#alert tcp any any -> any [80,8080] (msg:"HTTP exe download"; flow:to_client,established; content:".exe"; http_uri; nocase; sid:1009005; rev:1;)
-
-# HTTP upload
-#alert tcp any any -> any [80,8080] (msg:"HTTP suspicious upload"; flow:to_server,established; content:".exe"; http_uri; nocase; sid:1010002; rev:1;)
-
+# Détection de connexion SSH
+alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established; content:"SSH-"; nocase; sid:1000004; rev:1;)
 
 # Tentative d’injection SQL
-alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT"; http_uri; nocase; sid:1000008; rev:1;)
+alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT"; http_uri; nocase; sid:1000005; rev:1;)

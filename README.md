@@ -2,8 +2,6 @@
 
 A fully containerized, classroom-grade SIEM that you can run on a Debian 13 VM. It wires Snort network detection to Elasticsearch via Filebeat, with Kibana for visualization. Includes a small vulnerable web app to easily generate test traffic and validate rules.
 
-> IMPORTANT: This stack is intended for learning/lab use. It disables Elasticsearch security and uses a community Snort image. Do not expose to untrusted networks.
-
 
 ## Table of Contents
 - **[Overview](#overview)**
@@ -124,7 +122,7 @@ Followed and validated on a fresh Debian 13 VM.
 7. **Open Kibana** from your workstation browser (on the same network):
    - URL: `http://VM_IP:5601`
 
-> Screenshot placeholder: Kibana home — add image here.
+![Kibana visualization](./imgs/image.png)
 
 
 ## Kibana Setup (first run)
@@ -135,8 +133,8 @@ Followed and validated on a fresh Debian 13 VM.
 5. Index pattern: `filebeat-*`
 6. Save.
 
-> Screenshot placeholder: Create Data View — add image here.
-> Screenshot placeholder: Discover list of alerts — add image here.
+![Create a Data View](./imgs/image-1.png)
+![Save Data View](./imgs/image-2.png)
 
 Tip: You will mainly search in the `message` field (raw Snort alert line), e.g. `message: "Nmap TCP SYN Scan"`.
 
@@ -144,7 +142,7 @@ Tip: You will mainly search in the `message` field (raw Snort alert line), e.g. 
 ## Snort Rules — Playbook with Repro Commands
 Active rules are in `configs/snort/rules/local.rules`. The following 5 rules are enabled.
 
-> Screenshot placeholder: local.rules in editor — add image here.
+![Snort rules](./imgs/image-3.png)
 
 ### 1) ICMP Ping detected — SID 1000001
 Rule:
@@ -164,11 +162,11 @@ alert icmp any any -> any any (msg:"ICMP Ping detected"; sid:1000001; rev:1;)
   09/12-17:25:31.426992  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::585b:c1ff:fef7:5e22 -> ff02::16
   ```
 - **Kibana**: Search `message: "ICMP Ping detected"`.
-- **Screenshot placeholder**: ICMP alert visible in Discover — add image here.
+- **Screenshot placeholder**: ![ICMP Ping alert](./imgs/image-4.png)
 
 ---
 
-### 2) TEST HTTP exploit in URI — SID 1009001
+### 2) TEST HTTP exploit in URI — SID 1000002
 Rule:
 ```snort
 alert tcp any any -> any [80,8080] (
@@ -188,7 +186,7 @@ alert tcp any any -> any [80,8080] (
   09/13-16:48:15.952432  [**] [1:1009001:2] TEST HTTP exploit in URI [**] [Priority: 0] {TCP} 192.168.122.1:53250 -> 192.168.122.95:8080
   ```
 - **Kibana**: Search `message: "TEST HTTP exploit in URI"`.
-- **Screenshot placeholder**: HTTP exploit alert in Discover — add image here.
+- **Screenshot placeholder**: ![HTTP Exploit Alert](./imgs/image-5.png)
 
 ---
 
@@ -208,11 +206,11 @@ alert tcp any any -> any any (flags:S; msg:"Nmap TCP SYN Scan"; sid:1000003; rev
   09/13-16:57:42.554678  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:56910 -> 172.18.0.2:80
   ```
 - **Kibana**: Search `message: "Nmap TCP SYN Scan"`.
-- **Screenshot placeholder**: Nmap scan hits — add image here.
+- **Screenshot placeholder**: ![Nmap SYN Scan Alert](./imgs/image-6.png)
 
 ---
 
-### 4) SSH login attempt — SID 1009004
+### 4) SSH login attempt — SID 1000004
 Rule:
 ```snort
 alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established; content:"SSH-"; nocase; sid:1009004; rev:1;)
@@ -228,11 +226,11 @@ alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established
   09/13-16:53:07.114324  [**] [1:1009004:1] SSH login attempt [**] [Priority: 0] {TCP} 192.168.122.1:56706 -> 192.168.122.95:22
   ```
 - **Kibana**: Search `message: "SSH login attempt"`.
-- **Screenshot placeholder**: SSH alert — add image here.
+- **Screenshot placeholder**: ![SSH Login Attempt Alert](./imgs/image-7.png)
 
 ---
 
-### 5) Injection SQL possible — SID 1000008
+### 5) Injection SQL possible — SID 1000005
 Rule:
 ```snort
 alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT"; http_uri; nocase; sid:1000008; rev:1;)
@@ -249,7 +247,7 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
   09/13-17:16:25.117832  [**] [1:1000008:1] Injection SQL possible [**] [Priority: 0] {TCP} 192.168.122.1:60690 -> 192.168.122.95:80
   ```
 - **Kibana**: Search `message: "Injection SQL possible"`.
-- **Screenshot placeholder**: SQLi alert — add image here.
+- **Screenshot placeholder**: ![SQL Injection Alert](./imgs/image-8.png)
 
 
 ## How Logs Flow
@@ -280,12 +278,13 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
       host: "http://kibana:5601"
     ```
   - Notes: We ship raw lines; query on the `message` field in Kibana.
+![Kibana "message" field](./imgs/image-9.png)
+By specifying the "message" field, we can have a more digestible view of the alerts in Kibana. It is possible to add more fields to the data view.
 
 - syslog-ng (optional today): `configs/syslog-ng.conf`
   - Listens on 514/udp and 601/tcp, writes to `/var/log/hostlogs/$HOST_FROM.log` (container FS).
   - Currently not ingested by Filebeat; see [Customize / Extend](#customize--extend).
 
-> Screenshot placeholder: Filebeat Discover showing `message` field — add image here.
 
 
 ## Operations
@@ -344,15 +343,15 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
 
 ## Customize / Extend
 - **Add more Snort rules**: Put them into `configs/snort/rules/local.rules`.
-- **Parse Snort fields**: Create an ingest pipeline to parse `message` for fields like `signature`, `src_ip`, `dst_ip`, `proto`.
 - **Dashboards**: Build Kibana visualizations on top of `filebeat-*` (e.g., top signatures, sources, destinations).
-
-> Screenshot placeholder: Custom dashboard — add image here.
 
 
 ## Credits
-- **Authors**: TODO add three authors (Name Surname)
-- **University / Class / Teacher**: TODO add details
+- **Authors**:
+  - Axel GROGNET
+  - Lucas PERROT
+  - Tim QUEFFURUS
+- **University / Class / Teacher**: Université du Québec à Chicoutimi / Sécurité Informatique / Fehmi JAAFAR
 - **Install script**: `install.sh` installs Docker Engine + Compose plugin, enables Docker, adds user to `docker` group, fixes Filebeat config permissions.
 
 
