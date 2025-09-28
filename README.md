@@ -279,6 +279,7 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
     ```
   - Notes: We ship raw lines; query on the `message` field in Kibana.
   By specifying the "message" field, we can have a more digestible view of the alerts in Kibana. It is possible to add more fields to the data view.
+  
   ![Kibana "message" field](./imgs/image-9.png)
 
 - syslog-ng (optional today): `configs/syslog-ng.conf`
