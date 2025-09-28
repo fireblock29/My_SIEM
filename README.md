@@ -153,9 +153,9 @@ alert icmp any any -> any any (msg:"ICMP Ping detected"; sid:1000001; rev:1;)
 - **How it’s detected**: Packet type ICMP. No other conditions.
 - **Reproduce (from another machine on same network)**:
   ```bash
-  ping -c 1 VM_IPV4           # IPv4
+  ping -c 5 VM_IPV4           # IPv4
   # or
-  ping -6 -c 1 VM_IPV6        # IPv6
+  ping -6 -c 5 VM_IPV6        # IPv6
   ```
 - **Snort alert example** (from `logs/snort/alert_fast.txt`):
   ```text
@@ -183,7 +183,7 @@ alert tcp any any -> any [80,8080] (
   ```
 - **Snort alert example**:
   ```text
-  09/13-16:48:15.952432  [**] [1:1009001:2] TEST HTTP exploit in URI [**] [Priority: 0] {TCP} 192.168.122.1:53250 -> 192.168.122.95:8080
+  09/13-16:48:15.952432  [**] [1:1000002:2] TEST HTTP exploit in URI [**] [Priority: 0] {TCP} 192.168.122.1:53250 -> 192.168.122.95:8080
   ```
 - **Kibana**: Search `message: "TEST HTTP exploit in URI"`.
 - **Screenshot placeholder**: ![HTTP Exploit Alert](./imgs/image-5.png)
@@ -223,7 +223,7 @@ alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established
   ```
 - **Snort alert example**:
   ```text
-  09/13-16:53:07.114324  [**] [1:1009004:1] SSH login attempt [**] [Priority: 0] {TCP} 192.168.122.1:56706 -> 192.168.122.95:22
+  09/13-16:53:07.114324  [**] [1:1000004:1] SSH login attempt [**] [Priority: 0] {TCP} 192.168.122.1:56706 -> 192.168.122.95:22
   ```
 - **Kibana**: Search `message: "SSH login attempt"`.
 - **Screenshot placeholder**: ![SSH Login Attempt Alert](./imgs/image-7.png)
@@ -244,7 +244,7 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
   ```
 - **Snort alert example**:
   ```text
-  09/13-17:16:25.117832  [**] [1:1000008:1] Injection SQL possible [**] [Priority: 0] {TCP} 192.168.122.1:60690 -> 192.168.122.95:80
+  09/13-17:16:25.117832  [**] [1:1000005:1] Injection SQL possible [**] [Priority: 0] {TCP} 192.168.122.1:60690 -> 192.168.122.95:80
   ```
 - **Kibana**: Search `message: "Injection SQL possible"`.
 - **Screenshot placeholder**: ![SQL Injection Alert](./imgs/image-8.png)
@@ -278,12 +278,12 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
       host: "http://kibana:5601"
     ```
   - Notes: We ship raw lines; query on the `message` field in Kibana.
+  By specifying the "message" field, we can have a more digestible view of the alerts in Kibana. It is possible to add more fields to the data view.
+
 ![Kibana "message" field](./imgs/image-9.png)
-By specifying the "message" field, we can have a more digestible view of the alerts in Kibana. It is possible to add more fields to the data view.
 
 - syslog-ng (optional today): `configs/syslog-ng.conf`
   - Listens on 514/udp and 601/tcp, writes to `/var/log/hostlogs/$HOST_FROM.log` (container FS).
-  - Currently not ingested by Filebeat; see [Customize / Extend](#customize--extend).
 
 
 
