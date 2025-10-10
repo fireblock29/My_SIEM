@@ -35,14 +35,12 @@ flowchart LR
   subgraph Host[Debian 13 VM]
     direction LR
 
-    Snort[(Snort container\nnetwork_mode=host)] --> SLog[logs/snort/alert_fast.txt]
-    SyslogNG[(syslog-ng)] --> All[logs/syslog-ng/all.log]
+    Snort[(Snort container\nnetwork_mode=host)] -- writes --> SLog[logs/snort/alert_fast.txt]
+    SyslogNG[(syslog-ng)] -- writes --> All[logs/syslog-ng/all.log]
     Filebeat[(Filebeat)] --> ES[(Elasticsearch :9200)]
     ES <--> KB[(Kibana :5601)]
 
-    Snort -- writes --> SLog
     SyslogNG -- reads --> SLog
-    SyslogNG -- writes --> All
     Filebeat -- tails --> All
   end
 ```
