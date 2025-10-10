@@ -39,10 +39,8 @@ flowchart LR
     SyslogNG[(syslog-ng)] --> All[logs/syslog-ng/all.log]
     Filebeat[(Filebeat)] --> ES[(Elasticsearch :9200)]
     ES <--> KB[(Kibana :5601)]
-    Web[(PHP Apache 8080->80)] --> ALog[logs/syslog-ng/apache.log]
 
     SyslogNG -- reads --> SLog
-    SyslogNG -- reads --> ALog
     Filebeat -- tails --> All
   end
 ```
