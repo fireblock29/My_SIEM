@@ -33,21 +33,18 @@ Everything is orchestrated with Docker Compose.
 ```mermaid
 flowchart LR
   subgraph Host[Debian 13 VM]
-    direction TB
+    direction LR
 
     Snort[(Snort container\nnetwork_mode=host)] --> SLog[logs/snort/alert_fast.txt]
     SyslogNG[(syslog-ng)] --> All[logs/syslog-ng/all.log]
-    Web[(PHP Apache 8080->80)] --> ALog[logs/syslog-ng/apache.log]
     Filebeat[(Filebeat)] --> ES[(Elasticsearch :9200)]
     ES <--> KB[(Kibana :5601)]
+    Web[(PHP Apache 8080->80)] --> ALog[logs/syslog-ng/apache.log]
 
-    %% liens logiques
     SyslogNG -- reads --> SLog
     SyslogNG -- reads --> ALog
     Filebeat -- tails --> All
-    Filebeat -- HTTP --> ES
   end
-
 ```
 Note: this schema is rendered by Mermaid. You can see it properly on the Github repository of this project.
 
