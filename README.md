@@ -32,14 +32,35 @@ Everything is orchestrated with Docker Compose.
 ## Architecture
 ```mermaid
 flowchart LR
-  subgraph Host[Debian 13 VM]
+  subgraph VM[Debian 13 VM]
     direction LR
-    Snort[(Snort container\nnetwork_mode=host)] -- writes --> A[logs/snort/alert_fast.txt]
-    Web[(PHP Apache 8080->80)]
-    SyslogNG[(syslog-ng 514/udp,601/tcp)] -- writes --> H[/var/log/hostlogs/*.log/]
-    Filebeat[(Filebeat)] -- tails --> A
-    Filebeat -- HTTP --> ES[(Elasticsearch :9200)]
-    ES <--> KB[(Kibana :5601)]
+
+    subgraph HostNet[Host network]
+      SNORT[[snort (network_mode=host)]]
+    end
+
+    subgraph ElkNet[Docker network: elk]
+      ES[(Elasticsearch :9200)]
+      KB[(Kibana :5601)]
+      FB[[Filebeat]]
+      ES <--> KB
+      FB -->|HTTP| ES
+    end
+
+    subgraph BridgeNet[Docker default bridge]
+      WEB[[web (php-apache) 8080->80]]
+      SYSLOG[[syslog-ng 514/udp, 601/tcp]]
+    end
+
+    ALERTS[/./logs/snort/alert_fast.txt/]
+
+    SNORT -->|writes alerts| ALERTS
+    ALERTS -. bind mount .- FB
+
+    Client[(Your PC)] -->|HTTP 8080| WEB
+    Client -. traffic visible on host .-> SNORT
+
+    SYSLOG -->|writes| HOSTLOGS[/ /var/log/hostlogs/*.log /]
   end
 ```
 Note: this schema is rendered by Mermaid. You can see it properly on the Github repository of this project.
@@ -409,6 +430,9 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
 
 - **Security note**
   - Elasticsearch security is disabled for simplicity; do not expose ports 9200/5601 to the internet.
+
+- **Latest logs not visible in Kibana**
+  - In Kibana, set the time range (top-right) so the To value is Now (use a relative range like “Last 15 minutes”). If the To is a fixed timestamp in the past, new events won’t appear. Optionally enable Auto-refresh (e.g., every 10s).
 
 
 ## Customize / Extend
