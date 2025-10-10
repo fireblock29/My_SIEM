@@ -34,7 +34,7 @@ Everything is orchestrated with Docker Compose.
 flowchart LR
   subgraph Host[Debian 13 VM]
     direction LR
-    Snort[(Snort (host))] -- writes --> SLog[logs/snort/alert_fast.txt]
+    Snort[(Snort)] -- writes --> SLog[logs/snort/alert_fast.txt]
     Web[(PHP Apache 8080->80)] -- writes --> ALog[logs/syslog-ng/apache.log]
     SyslogNG[(syslog-ng)] -- reads --> SLog
     SyslogNG -- reads --> ALog
