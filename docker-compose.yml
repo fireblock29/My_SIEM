@@ -1,6 +1,9 @@
-version: "3.8"
 networks:
   elk:
+
+volumes:
+  esdata:
+
 services:
 
   elasticsearch:
@@ -18,11 +21,6 @@ services:
       - esdata:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
-    healthcheck:
-      test: ["CMD", "curl", "-s", "http://localhost:9200/_cluster/health?wait_for_status=yellow"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
     networks:
       - elk
 
@@ -32,27 +30,26 @@ services:
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
       - SERVER_HOST=0.0.0.0
-    networks:
-      - elk
     ports:
       - "5601:5601"
     depends_on:
       - elasticsearch
+    networks:
+      - elk
 
   syslog-ng:
-    image: linuxserver/syslog-ng
+    image: balabit/syslog-ng:latest
     container_name: syslog-ng
     volumes:
       - ./configs/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf:ro
-      - ./logs/snort:/var/log/snort  # dossier partagé pour que filebeat puisse lire les logs
-    network_mode: bridge
-    ports:
-      - "514:514/udp"
-      - "601:601/tcp"
+      - ./logs/syslog-ng:/var/log/syslog-ng
+      - ./logs/snort:/var/log/snort
     restart: unless-stopped
+    networks:
+      - elk
 
   snort:
-    image: frapsoft/snort  # test/dev image (voir README)
+    image: frapsoft/snort
     container_name: snort
     cap_add:
       - NET_ADMIN
@@ -62,29 +59,31 @@ services:
       - ./configs/snort:/etc/snort
       - ./logs/snort:/var/log/snort
     command: ["-c", "/etc/snort/snort.conf", "-i", "any"]
+    restart: unless-stopped
 
   web:
     image: php:8.1-apache
     container_name: web
     volumes:
       - ./configs/web/:/var/www/html/:ro
+      - ./logs/syslog-ng:/var/log/syslog-ng  # <-- on monte le même dossier que syslog-ng
     ports:
       - "8080:80"
     restart: unless-stopped
+    command: >
+      bash -c "apache2-foreground 2>&1 | tee -a /var/log/syslog-ng/apache.log"
 
   filebeat:
     image: docker.elastic.co/beats/filebeat:8.9.0
+    command: ["--strict.perms=false", "-e", "-d", "*"]
     container_name: filebeat
     user: root
     volumes:
       - ./configs/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-      - ./logs/snort:/var/log/snort:ro
+      - ./logs/syslog-ng/all.log:/var/log/syslog-ng/all.log:ro
     depends_on:
       - elasticsearch
-#    network_mode: host
+      - syslog-ng
     networks:
       - elk
     restart: unless-stopped
-
-volumes:
-  esdata:

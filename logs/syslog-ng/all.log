@@ -1,0 +1,586 @@
+Oct 10 16:08:05 64022b9ff9e8 syslog-ng[8]: syslog-ng starting up; version='4.10.1'
+Oct 10 16:08:05 64022b9ff9e8 syslog-ng[8]: Error opening file for writing; filename='/var/log/syslog-ng/all.log', error='Is a directory (21)'
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.297269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.417327  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.425278  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.425286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.621361  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ffc2:82b1
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.681265  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ffad:e3a1
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.681274  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ff57:5b13
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.777262  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.777270  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.777286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.777292  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.969441  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.969449  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.969452  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.969454  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:05.969456  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:06.097318  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:06.097328  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:06.257309  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::16
+Oct 10 16:08:06 64022b9ff9e8 10/10-16:08:06.257319  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:08:06 64022b9ff9e8 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:08:06 64022b9ff9e8 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:08:06 64022b9ff9e8 [Fri Oct 10 16:08:05.062572 2025] [mpm_prefork:notice] [pid 9:tid 9] AH00163: Apache/2.4.65 (Debian) PHP/8.1.33 configured -- resuming normal operations
+Oct 10 16:08:06 64022b9ff9e8 [Fri Oct 10 16:08:05.062602 2025] [core:notice] [pid 9:tid 9] AH00094: Command line: 'apache2 -D FOREGROUND'
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.353263  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.353272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.577269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.577278  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.577281  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.577283  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.577285  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.641275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.641285  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.673272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.705279  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.705290  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.705302  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.705307  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.813266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:06.917300  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:07.153271  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::16
+Oct 10 16:08:07 64022b9ff9e8 10/10-16:08:07.185272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::16
+Oct 10 16:08:10 64022b9ff9e8 10/10-16:08:10.353253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:08:10 64022b9ff9e8 10/10-16:08:10.353268  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:08:11 64022b9ff9e8 10/10-16:08:10.609268  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:08:11 64022b9ff9e8 10/10-16:08:10.609275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:08:11 64022b9ff9e8 10/10-16:08:10.865258  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:08:19 64022b9ff9e8 10/10-16:08:17.777249  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:08:19 64022b9ff9e8 10/10-16:08:18.289251  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:08:19 64022b9ff9e8 10/10-16:08:18.545253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:08:20 64022b9ff9e8 10/10-16:08:19.057252  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:08:20 64022b9ff9e8 10/10-16:08:19.569256  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996726  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 192.168.122.95:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996801  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 172.18.0.5:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996802  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 172.18.0.5:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996983  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 192.168.122.95:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996994  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 172.18.0.5:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:19.996996  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 172.18.0.5:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:20.078793  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 192.168.122.95:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:20.078830  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 172.18.0.5:5601
+Oct 10 16:08:21 64022b9ff9e8 10/10-16:08:20.078834  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 172.18.0.5:5601
+Oct 10 16:08:25 64022b9ff9e8 10/10-16:08:24.067365  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 192.168.122.95:5601
+Oct 10 16:08:25 64022b9ff9e8 10/10-16:08:24.067413  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 172.18.0.5:5601
+Oct 10 16:08:25 64022b9ff9e8 10/10-16:08:24.067418  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 172.18.0.5:5601
+Oct 10 16:08:30 64022b9ff9e8 10/10-16:08:29.740241  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:31 64022b9ff9e8 10/10-16:08:30.769289  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.793302  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900034  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 192.168.122.95:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900076  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 172.18.0.5:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900081  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 172.18.0.5:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900300  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 192.168.122.95:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900316  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 172.18.0.5:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.900318  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 172.18.0.5:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.966038  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 192.168.122.95:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.966074  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 172.18.0.5:5601
+Oct 10 16:08:32 64022b9ff9e8 10/10-16:08:31.966078  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 172.18.0.5:5601
+Oct 10 16:08:33 64022b9ff9e8 10/10-16:08:32.821290  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:33 64022b9ff9e8 10/10-16:08:33.030373  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41086 -> 34.95.113.255:443
+Oct 10 16:08:34 64022b9ff9e8 10/10-16:08:33.393255  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:08:34 64022b9ff9e8 10/10-16:08:33.709934  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 192.168.122.95:5601
+Oct 10 16:08:34 64022b9ff9e8 10/10-16:08:33.709972  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 172.18.0.5:5601
+Oct 10 16:08:34 64022b9ff9e8 10/10-16:08:33.709977  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 172.18.0.5:5601
+Oct 10 16:08:34 64022b9ff9e8 10/10-16:08:33.841294  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:35 64022b9ff9e8 10/10-16:08:34.380485  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41100 -> 34.95.113.255:443
+Oct 10 16:08:35 64022b9ff9e8 10/10-16:08:34.380549  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41106 -> 34.95.113.255:443
+Oct 10 16:08:35 64022b9ff9e8 10/10-16:08:34.417250  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:08:35 64022b9ff9e8 10/10-16:08:34.417262  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:34.820048  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41120 -> 34.95.113.255:443
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:34.865292  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:34.929263  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:35.464670  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 192.168.122.95:5601
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:35.464705  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 172.18.0.5:5601
+Oct 10 16:08:36 64022b9ff9e8 10/10-16:08:35.464709  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 172.18.0.5:5601
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:36.812798  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41132 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:36.881361  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200556  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41138 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200629  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41142 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200696  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41148 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200769  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41154 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200827  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41160 -> 34.95.113.255:443
+Oct 10 16:08:37 64022b9ff9e8 10/10-16:08:37.200883  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41166 -> 34.95.113.255:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.478835  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37960 -> 34.120.127.130:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.481399  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37962 -> 34.120.127.130:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.489253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.502356  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41178 -> 34.95.113.255:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.503095  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41194 -> 34.95.113.255:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.508272  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41210 -> 34.95.113.255:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:37.516415  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41222 -> 34.95.113.255:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:38.180630  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37976 -> 34.120.127.130:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:38.181155  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37978 -> 34.120.127.130:443
+Oct 10 16:08:38 64022b9ff9e8 10/10-16:08:38.340634  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41228 -> 34.95.113.255:443
+Oct 10 16:08:40 64022b9ff9e8 10/10-16:08:38.478448  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41238 -> 34.95.113.255:443
+Oct 10 16:08:40 64022b9ff9e8 10/10-16:08:39.897258  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34358 -> 34.95.113.255:443
+Oct 10 16:08:42 64022b9ff9e8 10/10-16:08:41.073311  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:08:50 64022b9ff9e8 10/10-16:08:49.265278  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:09:05 64022b9ff9e8 syslog-ng[8]: Error opening file for writing; filename='/var/log/syslog-ng/all.log', error='Is a directory (21)'
+Oct 10 16:09:05 64022b9ff9e8 10/10-16:09:04.113538  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:09:06 64022b9ff9e8 10/10-16:09:05.393319  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:09:07 64022b9ff9e8 10/10-16:09:06.161261  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:09:07 64022b9ff9e8 10/10-16:09:06.161269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:09:07 64022b9ff9e8 10/10-16:09:06.161274  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:09:15 64022b9ff9e8 10/10-16:09:14.353693  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:09:39 64022b9ff9e8 10/10-16:09:38.929417  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:10:05 64022b9ff9e8 syslog-ng[8]: Error opening file for writing; filename='/var/log/syslog-ng/all.log', error='Is a directory (21)'
+Oct 10 16:10:06 64022b9ff9e8 10/10-16:10:05.553253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:10:08 64022b9ff9e8 10/10-16:10:07.601331  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:10:08 64022b9ff9e8 10/10-16:10:07.601347  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:10:08 64022b9ff9e8 10/10-16:10:07.601356  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:10:28 64022b9ff9e8 10/10-16:10:28.081252  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:10:39 64022b9ff9e8 10/10-16:10:38.466044  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:39 64022b9ff9e8 10/10-16:10:38.466084  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:40 64022b9ff9e8 syslog-ng[8]: Error opening file for writing; filename='/var/log/syslog-ng/all.log', error='Is a directory (21)'
+Oct 10 16:10:40 64022b9ff9e8 10/10-16:10:39.489583  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:40 64022b9ff9e8 10/10-16:10:39.489649  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:41 64022b9ff9e8 10/10-16:10:40.512962  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:41 64022b9ff9e8 10/10-16:10:40.513028  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:42 64022b9ff9e8 10/10-16:10:41.535438  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:42 64022b9ff9e8 10/10-16:10:41.535473  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:43 64022b9ff9e8 10/10-16:10:42.558956  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:43 64022b9ff9e8 10/10-16:10:42.558980  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:44 64022b9ff9e8 10/10-16:10:43.581286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:44 64022b9ff9e8 10/10-16:10:43.581334  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:45 64022b9ff9e8 10/10-16:10:44.468949  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:45 64022b9ff9e8 10/10-16:10:44.604329  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:45 64022b9ff9e8 10/10-16:10:44.604398  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:46 64022b9ff9e8 10/10-16:10:45.489742  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:46 64022b9ff9e8 10/10-16:10:45.627322  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:46 64022b9ff9e8 10/10-16:10:45.627352  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:47 64022b9ff9e8 10/10-16:10:46.513736  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:47 64022b9ff9e8 10/10-16:10:46.650565  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:47 64022b9ff9e8 10/10-16:10:46.650615  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:48 64022b9ff9e8 10/10-16:10:47.537312  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:48 64022b9ff9e8 10/10-16:10:47.673345  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:48 64022b9ff9e8 10/10-16:10:47.673362  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:49 64022b9ff9e8 10/10-16:10:48.561613  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:49 64022b9ff9e8 10/10-16:10:48.697635  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:49 64022b9ff9e8 10/10-16:10:48.697670  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:50 64022b9ff9e8 10/10-16:10:49.585298  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:50 64022b9ff9e8 10/10-16:10:49.720132  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:50 64022b9ff9e8 10/10-16:10:49.720176  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:51 64022b9ff9e8 10/10-16:10:50.743243  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:51 64022b9ff9e8 10/10-16:10:50.743280  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:52 64022b9ff9e8 10/10-16:10:51.601777  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:52 64022b9ff9e8 10/10-16:10:51.766815  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:52 64022b9ff9e8 10/10-16:10:51.766842  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:53 64022b9ff9e8 10/10-16:10:52.789887  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:53 64022b9ff9e8 10/10-16:10:52.789915  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:54 64022b9ff9e8 10/10-16:10:53.813519  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:54 64022b9ff9e8 10/10-16:10:53.813552  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:55 64022b9ff9e8 10/10-16:10:54.837809  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:55 64022b9ff9e8 10/10-16:10:54.837835  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:56 64022b9ff9e8 10/10-16:10:55.729365  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:10:56 64022b9ff9e8 10/10-16:10:55.860821  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:56 64022b9ff9e8 10/10-16:10:55.860871  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:57 64022b9ff9e8 10/10-16:10:56.884186  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:57 64022b9ff9e8 10/10-16:10:56.884212  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:58 64022b9ff9e8 10/10-16:10:57.907471  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:58 64022b9ff9e8 10/10-16:10:57.907498  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:10:59 64022b9ff9e8 10/10-16:10:58.931147  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:10:59 64022b9ff9e8 10/10-16:10:58.931178  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:00 64022b9ff9e8 10/10-16:10:59.954754  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:11:00 64022b9ff9e8 10/10-16:10:59.954793  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:01 64022b9ff9e8 10/10-16:11:00.978266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:11:01 64022b9ff9e8 10/10-16:11:00.978284  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:02 64022b9ff9e8 10/10-16:11:02.001775  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:11:02 64022b9ff9e8 10/10-16:11:02.001801  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:03 64022b9ff9e8 10/10-16:11:03.025450  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:11:03 64022b9ff9e8 10/10-16:11:03.025481  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:03.921695  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.049384  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.049427  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.103181  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.103204  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.103209  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.105353  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.105498  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:04 64022b9ff9e8 10/10-16:11:04.105603  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:11:05 64022b9ff9e8 10/10-16:11:05.137326  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:11:05 64022b9ff9e8 10/10-16:11:05.137344  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:05 64022b9ff9e8 10/10-16:11:05.137349  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:06 64022b9ff9e8 10/10-16:11:06.161727  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:06 64022b9ff9e8 10/10-16:11:06.161808  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:06 64022b9ff9e8 10/10-16:11:06.161821  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:11:07 64022b9ff9e8 10/10-16:11:07.185498  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:11:07 64022b9ff9e8 10/10-16:11:07.185534  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:07 64022b9ff9e8 10/10-16:11:07.185538  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:08 64022b9ff9e8 10/10-16:11:07.566024  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:11:08 64022b9ff9e8 10/10-16:11:07.566039  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:08 64022b9ff9e8 10/10-16:11:07.566042  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:08 64022b9ff9e8 10/10-16:11:08.209708  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:08 64022b9ff9e8 10/10-16:11:08.209774  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:09 64022b9ff9e8 10/10-16:11:09.233414  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:11:09 64022b9ff9e8 10/10-16:11:09.233438  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:09 64022b9ff9e8 10/10-16:11:09.318331  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:11:09 64022b9ff9e8 10/10-16:11:09.318403  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:09 64022b9ff9e8 10/10-16:11:09.318412  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:11:11 64022b9ff9e8 10/10-16:11:11.249397  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:15 64022b9ff9e8 10/10-16:11:15.441297  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:24 64022b9ff9e8 10/10-16:11:23.633308  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:40 64022b9ff9e8 syslog-ng[8]: Error opening file for writing; filename='/var/log/syslog-ng/all.log', error='Is a directory (21)'
+Oct 10 16:11:40 64022b9ff9e8 10/10-16:11:39.761548  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:11:58 64022b9ff9e8 10/10-16:11:58.193610  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:12:09 64022b9ff9e8 10/10-16:12:08.433270  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:12:11 64022b9ff9e8 10/10-16:12:10.481596  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:12:11 64022b9ff9e8 10/10-16:12:10.481616  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:12:13 64022b9ff9e8 10/10-16:12:12.529749  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:04 64022b9ff9e8 10/10-16:13:03.729605  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:31 64022b9ff9e8 10/10-16:13:31.190380  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:55346 -> 34.95.113.255:443
+Oct 10 16:13:31 64022b9ff9e8 10/10-16:13:31.812806  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41940 -> 34.120.127.130:443
+Oct 10 16:13:33 64022b9ff9e8 10/10-16:13:32.346476  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:55358 -> 34.95.113.255:443
+Oct 10 16:13:49 f4702d6910fb syslog-ng[8]: syslog-ng starting up; version='4.10.1'
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.297269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.417327  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.425278  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.425286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.621361  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ffc2:82b1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.681265  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ffad:e3a1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.681274  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ff57:5b13
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.777262  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.777270  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.777286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:08:05.062572 2025] [mpm_prefork:notice] [pid 9:tid 9] AH00163: Apache/2.4.65 (Debian) PHP/8.1.33 configured -- resuming normal operations
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:08:05.062602 2025] [core:notice] [pid 9:tid 9] AH00094: Command line: 'apache2 -D FOREGROUND'
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:13:48.990836 2025] [mpm_prefork:notice] [pid 8:tid 8] AH00163: Apache/2.4.65 (Debian) PHP/8.1.33 configured -- resuming normal operations
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:13:48.991345 2025] [core:notice] [pid 8:tid 8] AH00094: Command line: 'apache2 -D FOREGROUND'
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.777292  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.969441  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.969449  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.969452  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.969454  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:05.969456  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.097318  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.097328  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.257309  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.257319  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.353263  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.353272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::8447:83ff:feeb:3342 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.577269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.577278  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.577281  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.577283  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.577285  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::e0f1:f8ff:fe32:83bc -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.641275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.641285  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.673272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.705279  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.705290  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.705302  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.705307  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.813266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:06.917300  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:07.153271  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:07.185272  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::16
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:10.353253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:10.353268  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:10.609268  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:10.609275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:10.865258  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:17.777249  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:18.289251  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:18.545253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.057252  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.569256  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996726  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996801  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996802  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34028 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996983  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996994  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:19.996996  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34038 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:20.078793  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:20.078830  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:20.078834  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34040 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:24.067365  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:24.067413  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:24.067418  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:34042 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:29.740241  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:30.769289  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.793302  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900034  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900076  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900081  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37424 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900300  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900316  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.900318  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37438 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.966038  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.966074  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:31.966078  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37454 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:32.821290  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.030373  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41086 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.393255  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.709934  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.709972  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.709977  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37456 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:33.841294  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.380485  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41100 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.380549  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41106 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.417250  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.417262  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.820048  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41120 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.865292  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:34.929263  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:35.464670  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 192.168.122.95:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:35.464705  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:35.464709  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:37470 -> 172.18.0.5:5601
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:36.812798  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41132 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:36.881361  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200556  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41138 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200629  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41142 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200696  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41148 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200769  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41154 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200827  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41160 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.200883  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41166 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.478835  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37960 -> 34.120.127.130:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.481399  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37962 -> 34.120.127.130:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.489253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.502356  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41178 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.503095  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41194 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.508272  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41210 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:37.516415  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41222 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:38.180630  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37976 -> 34.120.127.130:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:38.181155  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:37978 -> 34.120.127.130:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:38.340634  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41228 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:38.478448  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41238 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:39.897258  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34358 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:41.073311  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:08:49.265278  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:04.113538  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:05.393319  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:06.161261  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:06.161269  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:06.161274  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:14.353693  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:09:38.929417  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40858 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:05.553253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:07.601331  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:07.601347  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:07.601356  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:28.081252  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:38.466044  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:38.466084  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:39.489583  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:39.489649  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:40.512962  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:40.513028  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:41.535438  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:41.535473  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:42.558956  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:42.558980  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:43.581286  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:43.581334  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:44.468949  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:44.604329  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:44.604398  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:45.489742  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:45.627322  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:45.627352  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:46.513736  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:46.650565  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:46.650615  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:47.537312  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:47.673345  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:47.673362  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:48.561613  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:48.697635  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:48.697670  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:49.585298  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:49.720132  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:49.720176  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:50.743243  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:50.743280  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:51.601777  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:51.766815  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:51.766842  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:52.789887  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:52.789915  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:53.813519  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:53.813552  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:54.837809  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:54.837835  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:55.729365  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:55.860821  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:55.860871  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:56.884186  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:56.884212  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:57.907471  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:57.907498  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:58.931147  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:58.931178  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:59.954754  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:10:59.954793  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:00.978266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:00.978284  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:02.001775  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:02.001801  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:03.025450  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:03.025481  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:03.921695  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:39448 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.049384  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.1 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.049427  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 192.168.122.95 -> 192.168.122.1
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.103181  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.103204  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.103209  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.105353  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.105498  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:04.105603  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:05.137326  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:05.137344  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:05.137349  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:06.161727  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:06.161808  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:06.161821  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.185498  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35022 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.185534  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.185538  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.566024  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.566039  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:07.566042  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:08.209708  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:08.209774  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:09.233414  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35014 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:09.233438  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:09.318331  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:09.318403  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:09.318412  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:11.249397  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:15.441297  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:23.633308  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:39.761548  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:11:58.193610  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::b443:81ff:fe3f:c7f4 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:12:08.433270  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5cef:5dff:fead:e3a1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:12:10.481596  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::2004:c7ff:fec2:82b1 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:12:10.481616  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::5c3b:b0ff:fe57:5b13 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:12:12.529749  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:35012 -> 169.254.169.254:80
+Oct 10 16:13:50 f4702d6910fb 10/10-16:13:03.729605  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::6020:23ff:fec3:6b37 -> ff02::2
+Oct 10 16:13:50 f4702d6910fb 10/10-16:13:31.190380  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:55346 -> 34.95.113.255:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:13:31.812806  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:41940 -> 34.120.127.130:443
+Oct 10 16:13:50 f4702d6910fb 10/10-16:13:32.346476  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:55358 -> 34.95.113.255:443
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.681257  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.681265  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.873309  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ff57:9ad2
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.941257  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::1:ff07:4f98
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.973273  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:49.973283  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::2
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.161281  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.161289  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.161292  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.161293  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.161296  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.197266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.197275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::2
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.257261  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} :: -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.313258  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.321271  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.321279  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::2
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.353279  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f9:50ff:fe89:e2ed -> ff02::16
+Oct 10 16:13:51 f4702d6910fb 10/10-16:13:50.353287  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f9:50ff:fe89:e2ed -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.837264  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897274  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897277  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897279  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897281  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::4852:7ff:fe25:cfbe -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897302  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.897308  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::2
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.965275  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.965284  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::2
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.965298  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f9:50ff:fe89:e2ed -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.965305  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f9:50ff:fe89:e2ed -> ff02::16
+Oct 10 16:13:52 f4702d6910fb 10/10-16:13:50.965311  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::16
+Oct 10 16:13:53 f4702d6910fb 10/10-16:13:51.605266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::16
+Oct 10 16:13:53 f4702d6910fb 10/10-16:13:51.637371  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::16
+Oct 10 16:13:55 f4702d6910fb 10/10-16:13:54.421248  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::2
+Oct 10 16:13:55 f4702d6910fb 10/10-16:13:54.421254  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::2
+Oct 10 16:13:55 f4702d6910fb 10/10-16:13:54.673253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::2
+Oct 10 16:13:56 f4702d6910fb 10/10-16:13:54.929248  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::2
+Oct 10 16:13:56 f4702d6910fb 10/10-16:13:54.929255  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::2
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.682998  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45608 -> 192.168.122.95:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.683072  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45608 -> 172.18.0.5:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.683073  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45608 -> 172.18.0.5:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.752352  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45618 -> 192.168.122.95:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.752422  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45618 -> 172.18.0.5:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.752427  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45618 -> 172.18.0.5:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.762203  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45624 -> 192.168.122.95:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.762240  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45624 -> 172.18.0.5:5601
+Oct 10 16:14:00 f4702d6910fb 10/10-16:13:59.762245  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45624 -> 172.18.0.5:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.259054  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45632 -> 192.168.122.95:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.259091  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45632 -> 172.18.0.5:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.259096  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45632 -> 172.18.0.5:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.311408  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45636 -> 192.168.122.95:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.311470  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45636 -> 172.18.0.5:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.311474  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45636 -> 172.18.0.5:5601
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.609251  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::2
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.609258  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::2
+Oct 10 16:14:03 f4702d6910fb 10/10-16:14:02.865253  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::2
+Oct 10 16:14:04 f4702d6910fb 10/10-16:14:03.121255  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::2
+Oct 10 16:14:04 f4702d6910fb 10/10-16:14:03.377257  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::2
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.039582  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45650 -> 192.168.122.95:5601
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.039618  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45650 -> 172.18.0.5:5601
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.039623  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45650 -> 172.18.0.5:5601
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.112343  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45660 -> 192.168.122.95:5601
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.112382  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45660 -> 172.18.0.5:5601
+Oct 10 16:14:07 f4702d6910fb 10/10-16:14:06.112388  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:45660 -> 172.18.0.5:5601
+Oct 10 16:14:09 f4702d6910fb 10/10-16:14:08.944057  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44814 -> 192.168.122.95:5601
+Oct 10 16:14:09 f4702d6910fb 10/10-16:14:08.944094  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44814 -> 172.18.0.5:5601
+Oct 10 16:14:09 f4702d6910fb 10/10-16:14:08.944099  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44814 -> 172.18.0.5:5601
+Oct 10 16:14:15 f4702d6910fb 10/10-16:14:14.328774  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:16 f4702d6910fb 10/10-16:14:15.345284  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.369306  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962453  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44824 -> 192.168.122.95:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962488  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44824 -> 172.18.0.5:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962493  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44824 -> 172.18.0.5:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962676  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44832 -> 192.168.122.95:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962697  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44832 -> 172.18.0.5:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:16.962698  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:44832 -> 172.18.0.5:5601
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:17.393286  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:17 f4702d6910fb 10/10-16:14:17.411427  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:33240 -> 34.95.113.255:443
+Oct 10 16:14:18 f4702d6910fb 10/10-16:14:17.969252  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::dc6c:f6ff:fe57:9ad2 -> ff02::2
+Oct 10 16:14:18 f4702d6910fb 10/10-16:14:18.225264  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::ca6:89ff:fe07:4f98 -> ff02::2
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:18.417304  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:18.771156  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:33252 -> 34.95.113.255:443
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:18.771221  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:33262 -> 34.95.113.255:443
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:19.226585  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:46980 -> 192.168.122.95:5601
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:19.226624  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:46980 -> 172.18.0.5:5601
+Oct 10 16:14:19 f4702d6910fb 10/10-16:14:19.226630  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:46980 -> 172.18.0.5:5601
+Oct 10 16:14:20 f4702d6910fb 10/10-16:14:19.393625  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51314 -> 34.95.113.255:443
+Oct 10 16:14:20 f4702d6910fb 10/10-16:14:19.403410  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51322 -> 34.95.113.255:443
+Oct 10 16:14:20 f4702d6910fb 10/10-16:14:19.441296  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.457286  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.553255  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::f8eb:34ff:fe57:8fcc -> ff02::2
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.553262  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::502d:74ff:fedc:b120 -> ff02::2
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.553266  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} fe80::80d1:14ff:feda:dfc9 -> ff02::2
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.603790  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51332 -> 34.95.113.255:443
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.603852  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51346 -> 34.95.113.255:443
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.603901  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51360 -> 34.95.113.255:443
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.603948  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51376 -> 34.95.113.255:443
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.603995  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51378 -> 34.95.113.255:443
+Oct 10 16:14:22 f4702d6910fb 10/10-16:14:21.604039  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51392 -> 34.95.113.255:443
+Oct 10 16:14:23 f4702d6910fb 10/10-16:14:22.480121  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40554 -> 34.120.127.130:443
+Oct 10 16:14:23 f4702d6910fb 10/10-16:14:22.484655  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40556 -> 34.120.127.130:443
+Oct 10 16:14:23 f4702d6910fb 10/10-16:14:22.486343  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51396 -> 34.95.113.255:443
+Oct 10 16:14:23 f4702d6910fb 10/10-16:14:22.500257  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51400 -> 34.95.113.255:443
+Oct 10 16:14:23 f4702d6910fb 10/10-16:14:22.510484  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51404 -> 34.95.113.255:443
+Oct 10 16:14:24 f4702d6910fb 10/10-16:14:23.341029  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40572 -> 34.120.127.130:443
+Oct 10 16:14:24 f4702d6910fb 10/10-16:14:23.341090  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:40584 -> 34.120.127.130:443
+Oct 10 16:14:24 f4702d6910fb 10/10-16:14:23.765568  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51406 -> 34.95.113.255:443
+Oct 10 16:14:24 f4702d6910fb 10/10-16:14:23.780512  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51410 -> 34.95.113.255:443
+Oct 10 16:14:24 f4702d6910fb 10/10-16:14:24.281015  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51412 -> 34.95.113.255:443
+Oct 10 16:14:25 f4702d6910fb 10/10-16:14:24.374434  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:51414 -> 34.95.113.255:443
+Oct 10 16:14:26 f4702d6910fb 10/10-16:14:25.650021  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:57632 -> 169.254.169.254:80
+Oct 10 16:14:26 f4702d6910fb 10/10-16:14:25.671377  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 192.168.122.95
+Oct 10 16:14:26 f4702d6910fb 10/10-16:14:25.671422  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:14:26 f4702d6910fb 10/10-16:14:25.671430  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {ICMP} 38.122.42.57 -> 172.18.0.5
+Oct 10 16:14:26 f4702d6910fb 10/10-16:14:25.673484  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:27 f4702d6910fb 10/10-16:14:26.705538  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:28 f4702d6910fb 10/10-16:14:27.729286  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:29 f4702d6910fb 10/10-16:14:28.753301  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:30 f4702d6910fb 10/10-16:14:29.777329  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:31 f4702d6910fb 10/10-16:14:30.801300  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:33 f4702d6910fb 10/10-16:14:32.817393  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80
+Oct 10 16:14:37 f4702d6910fb 10/10-16:14:36.913357  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.95:34548 -> 169.254.169.254:80

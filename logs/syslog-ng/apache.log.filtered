@@ -1,0 +1,9 @@
+Oct 10 16:08:06 64022b9ff9e8 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:08:06 64022b9ff9e8 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:08:06 64022b9ff9e8 [Fri Oct 10 16:08:05.062602 2025] [core:notice] [pid 9:tid 9] AH00094: Command line: 'apache2 -D FOREGROUND'
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:08:05.062602 2025] [core:notice] [pid 9:tid 9] AH00094: Command line: 'apache2 -D FOREGROUND'
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Oct 10 16:13:50 f4702d6910fb [Fri Oct 10 16:13:48.991345 2025] [core:notice] [pid 8:tid 8] AH00094: Command line: 'apache2 -D FOREGROUND'
