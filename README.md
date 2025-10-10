@@ -40,7 +40,9 @@ flowchart LR
     Filebeat[(Filebeat)] --> ES[(Elasticsearch :9200)]
     ES <--> KB[(Kibana :5601)]
 
+    Snort -- writes --> SLog
     SyslogNG -- reads --> SLog
+    SyslogNG -- writes --> All
     Filebeat -- tails --> All
   end
 ```
