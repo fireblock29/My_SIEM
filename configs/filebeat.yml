@@ -3,11 +3,7 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      #- /var/log/snort/*      # tous les logs Snort
-      #- /var/log/snort/alert_fast.txt      # fichier alert spécifique
       - /var/log/syslog-ng/all.log
-    # ignore_older: 72h           # optionnel : ignore les fichiers vieux
-    # multiline pattern can be added si logs multi-lignes
     scan_frequency: 10s       # vérifie le fichier toutes les 10 secondes
     tail_files: true          # lit uniquement les nouvelles lignes à partir du démarrage
 # ============================== Filebeat modules =============================

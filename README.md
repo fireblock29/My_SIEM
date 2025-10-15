@@ -1,33 +1,30 @@
-# My_SIEM — Lightweight ELK + Snort SIEM (Debian 13)
+# My_SIEM — SIEM ELK + Snort léger (Debian 13)
 
-A fully containerized, classroom-grade SIEM that you can run on a Debian 13 VM. It wires Snort network detection to Elasticsearch via Filebeat, with Kibana for visualization. Includes a small vulnerable web app to easily generate test traffic and validate rules.
+Un SIEM entièrement conteneurisé que vous pouvez exécuter sur une VM Debian 13. Il relie la détection réseau de Snort à Elasticsearch via Filebeat, avec Kibana pour la visualisation. Il inclut une petite application web vulnérable pour générer facilement du trafic de test et valider les règles.
 
-
-## Table of Contents
-- **[Overview](#overview)**
+## Table des matières
+- **[Aperçu](#aperçu)**
 - **[Architecture](#architecture)**
 - **[Services](#services)**
-- **[Quick Start (Debian 13 tested)](#quick-start-debian-13-tested)**
-- **[Kibana Setup (first run)](#kibana-setup-first-run)**
-- **[Snort Rules — Playbook with Repro Commands](#snort-rules--playbook-with-repro-commands)**
-- **[How Logs Flow](#how-logs-flow)**
-- **[Operations](#operations)**
-- **[Troubleshooting](#troubleshooting)**
-- **[Customize / Extend](#customize--extend)**
-- **[Credits](#credits)**
+- **[Démarrage rapide (testé sur Debian 13)](#démarrage-rapide-testé-sur-debian-13)**
+- **[Configuration de Kibana (premier lancement)](#configuration-de-kibana-premier-lancement)**
+- **[Règles Snort — Tests et commandes de repro](#règles-snort--carnet-de-tests-avec-commandes-de-repro)**
+- **[Flux des journaux](#flux-des-journaux)**
+- **[Opérations](#opérations)**
+- **[Dépannage](#dépannage)**
+- **[Personnaliser / Étendre](#personnaliser--étendre)**
+- **[Crédits](#crédits)**
 
+## Aperçu
+Ce projet fournit un SIEM minimal :
+- **IDS réseau** : Snort (journalise dans `alert_fast.txt`).
+- **Collecteur Syslog** : syslog-ng (écoute et écrit dans le fichier `all.log`).
+- **Collecteur/shipper** : Filebeat (écoute les logs et les envoie à Elasticsearch).
+- **Stockage** : Elasticsearch.
+- **Interface** : Kibana.
+- **Appli de test** : Petite appli PHP sur `http://VM_IP:8080` pour déclencher des règles HTTP.
 
-## Overview
-This project ships a minimal SIEM:
-- **Network IDS**: Snort (logs to `alert_fast.txt`).
-- **Shipper**: Filebeat (tails Snort alerts and sends to Elasticsearch).
-- **Storage**: Elasticsearch (single-node, xpack security disabled).
-- **UI**: Kibana.
-- **Syslog collector**: syslog-ng (listens on 514/udp, 601/tcp to file; not shipped to ES by default).
-- **Test app**: Simple PHP app on `http://VM_IP:8080` to trigger HTTP rules.
-
-Everything is orchestrated with Docker Compose.
-
+Le tout est orchestré avec Docker Compose.
 
 ## Architecture
 ```mermaid
@@ -35,126 +32,123 @@ flowchart LR
   subgraph Host[Debian 13 VM]
     direction LR
 
-    Snort[(Snort container\nnetwork_mode=host)] -- writes --> SLog[logs/snort/alert_fast.txt]
-    SyslogNG[(syslog-ng)] -- writes --> All[logs/syslog-ng/all.log]
+    Snort[(Conteneur Snort\nnetwork_mode=host)] -- écrit --> SLog[logs/snort/alert_fast.txt]
+    SyslogNG[(syslog-ng)] -- écrit --> All[logs/syslog-ng/all.log]
     Filebeat[(Filebeat)] --> ES[(Elasticsearch :9200)]
     ES <--> KB[(Kibana :5601)]
 
-    SyslogNG -- reads --> SLog
-    Filebeat -- tails --> All
+    SyslogNG -- lit --> SLog
+    Filebeat -- suit --> All
   end
 ```
-Note: this schema is rendered by Mermaid. You can see it properly on the Github repository of this project.
+Note : ce schéma est rendu par Mermaid. Vous pouvez le visualiser correctement sur [le dépôt GitHub du projet](https://github.com/fireblock29/My_SIEM).
 
-Key links:
-- Snort writes to `./logs/snort/` (host). Filebeat reads that same path and ships to Elasticsearch.
-- Kibana connects to Elasticsearch and you explore indices `filebeat-*`.
-
+Liens clés :
+- Snort écrit dans `./logs/snort/alert_fast.txt` (hôte). Syslog-ng lit ce même chemin et écrit dans `logs/syslog-ng/all.log`.
+- Filebeat suit `logs/syslog-ng/all.log` et envoie les logs à Elasticsearch.
+- Kibana se connecte à Elasticsearch et vous explorez les index `filebeat-*`.
 
 ## Services
-Defined in `docker-compose.yml`:
+Définis dans `docker-compose.yml` :
 
 - **elasticsearch** (`docker.elastic.co/elasticsearch/elasticsearch:8.9.0`)
-  - Ports: `9200:9200`
-  - Heap: `ES_JAVA_OPTS=-Xms1g -Xmx1g`
-  - Data volume: `esdata` -> `/usr/share/elasticsearch/data`
+  - Ports : `9200:9200`
+  - Heap : `ES_JAVA_OPTS=-Xms1g -Xmx1g`
+  - Volume de données : `esdata` -> `/usr/share/elasticsearch/data`
 
 - **kibana** (`docker.elastic.co/kibana/kibana:8.9.0`)
-  - Ports: `5601:5601`
-  - Env: `ELASTICSEARCH_HOSTS=http://elasticsearch:9200`
+  - Ports : `5601:5601`
+  - Env : `ELASTICSEARCH_HOSTS=http://elasticsearch:9200`
 
 - **snort** (`frapsoft/snort`)
-  - Runs in `network_mode: host` to sniff all interfaces
-  - Config: `./configs/snort/snort.conf` includes `./configs/snort/rules/local.rules`
-  - Output: `alert_fast: /var/log/snort/alert_fast.txt`
-  - Volume: `./logs/snort:/var/log/snort`
+  - S’exécute avec `network_mode: host` pour sniffer toutes les interfaces
+  - Config : `./configs/snort/snort.conf` inclut `./configs/snort/rules/local.rules`
+  - Sortie : `alert_fast: /var/log/snort/alert_fast.txt`
+  - Volume : `./logs/snort:/var/log/snort`
+
+- **syslog-ng** (`balabit/syslog-ng:latest`)
+  - Config : `./configs/syslog-ng.conf`
+  - Écrit les logs hôtes sous `/var/log/syslog-ng/all.log` (dans le conteneur)
 
 - **filebeat** (`docker.elastic.co/beats/filebeat:8.9.0`)
-  - Config: `./configs/filebeat.yml`
-  - Reads: `/var/log/snort/alert_fast.txt`
-  - Sends to: `http://elasticsearch:9200`
-
-- **syslog-ng** (`linuxserver/syslog-ng`)
-  - Ports: `514/udp`, `601/tcp`
-  - Config: `./configs/syslog-ng.conf`
-  - Writes host logs under `/var/log/hostlogs/$HOST_FROM.log` (inside the container)
+  - Config : `./configs/filebeat.yml`
+  - Lit : `/var/log/snort/alert_fast.txt`
+  - Envoie vers : `http://elasticsearch:9200`
 
 - **web** (`php:8.1-apache`)
-  - Ports: `8080:80`
-  - Serves `./configs/web/index.php`
-  - For generating benign + suspicious HTTP traffic (demo only)
+  - Ports : `8080:80`
+  - Sert `./configs/web/index.php`
+  - Pour générer du trafic HTTP bénin + suspect (démo uniquement)
 
+## Démarrage rapide (testé sur Debian 13)
+Procédure suivie et validée sur une VM Debian 13 neuve.
+Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installation_VM.md](Installation_VM.md).   
 
-## Quick Start (Debian 13 tested)
-Followed and validated on a fresh Debian 13 VM.
-
-0. **Become root**
+0. **Passer root**
    ```bash
    su
    ```
-   Keep this root session open until the **4. Reboot** step.
+   Gardez cette session root ouverte jusqu’à l’étape **4. Reboot**.
 
-1. **Install Git**
+1. **Installer Git**
    ```bash
    apt update && apt install -y git
    ```
-2. **Clone the repo**
+2. **Cloner le dépôt**
    ```bash
    git clone https://github.com/fireblock29/My_SIEM
    cd My_SIEM
    ```
-3. **Run the installer** (installs Docker Engine + Compose plugin, adds your user to the `docker` group, sets filebeat perms)
+3. **Lancer l’installateur** (installe Docker Engine + plugin Compose, ajoute votre utilisateur au groupe `docker`, corrige les permissions de filebeat)
    ```bash
    chmod +x ./install.sh
    ./install.sh
    ```
-4. **Reboot** to apply the `docker` group membership
-   If you are using a CLI, here is the command to reboot:
+4. **Redémarrer** pour appliquer l’appartenance au groupe `docker`
+   Si vous utilisez une CLI, voici la commande pour redémarrer :
    ```bash
    /usr/sbin/reboot
    ```
-5. **Start the stack** (after reboot, cd back to the project)
+5. **Démarrer la stack** (après redémarrage, revenez dans le projet)
    ```bash
    cd ~/My_SIEM
    docker compose up -d
    ```
-6. **Wait** until Docker pulls are done and containers are healthy. First run can take a while. Then wait another ~60s for services to settle.
+6. **Attendre** que les images soient tirées et les conteneurs en bonne santé. Le premier lancement peut être long. Attendre ensuite ~60s le temps que les services se stabilisent.
 
-7. **Open Kibana** from your workstation browser (on the same network):
-   - URL: `http://VM_IP:5601`
+7. **Ouvrir Kibana** depuis votre poste (sur le même réseau) :
+   - URL : `http://VM_IP:5601`
 
-![Kibana visualization](./imgs/image.png)
+![Visualisation Kibana](./imgs/image.png)
 
+## Configuration de Kibana (premier lancement)
+1. Cliquer sur « Explore on my own ».
+2. Ouvrir le menu (en haut à gauche) → « Discover ».
+3. Cliquer sur « Create data view ».
+4. Nom : au choix (ex. `Snort Alerts`)
+5. Modèle d’index : `filebeat-*`
+6. Enregistrer.
 
-## Kibana Setup (first run)
-1. Click "Explore on my own".
-2. Open the burger menu (top-left) → "Discover".
-3. Click "Create data view".
-4. Name: anything (e.g., `Snort Alerts`)
-5. Index pattern: `filebeat-*`
-6. Save.
+![Créer une Data View](./imgs/image-1.png)
+![Enregistrer la Data View](./imgs/image-2.png)
 
-![Create a Data View](./imgs/image-1.png)
-![Save Data View](./imgs/image-2.png)
+Astuce : Vous chercherez principalement dans le champ `message` (ligne d’alerte Snort brute), par ex. `message: "Nmap TCP SYN Scan"`.
 
-Tip: You will mainly search in the `message` field (raw Snort alert line), e.g. `message: "Nmap TCP SYN Scan"`.
+## Configuration du tableau de bord Kibana
+1. Ouvrir le menu (en haut à gauche) → « Stack Management ».
+2. Cliquer sur « Saved Objects ».
+3. Cliquer sur « Import ».
+4. Sélectionner le fichier `dashboard.ndjson` du projet.
+5. Cliquer sur « Import ».
+6. Ouvrir le menu (en haut à gauche) → « Dashboard ».
+7. Cliquer sur « My_Dash ».
 
-## Kibana Dashboard Setup
-1. Open the burger menu (top-left) → "Stack Management".
-2. Click "Saved Objects".
-3. Click "Import".
-4. Select the `dashboard.ndjson` file from the project.
-5. Click "Import".
-6. Open the burger menu (top-left) → "Dashboard".
-7. Click "My_Dash".
-
-Of course, you can create your own dashboard and save it. But here, we give the model of "My_Dash" to get you started.
+Bien sûr, vous pouvez créer votre propre dashboard et l’enregistrer. Ici, on fournit le modèle « My_Dash » pour démarrer.
 
 ![My_Dash](./imgs/image-10.png)
 
-
-## Snort Rules — Playbook with Repro Commands
-Active rules are in `configs/snort/rules/local.rules`. The following 5 rules are enabled.
+## Règles Snort — Carnet de tests avec commandes de repro
+Les règles actives sont dans `configs/snort/rules/local.rules`. Les 5 règles suivantes sont activées.
 
 - ICMP Ping detected
 - TEST HTTP exploit in URI
@@ -162,205 +156,201 @@ Active rules are in `configs/snort/rules/local.rules`. The following 5 rules are
 - SSH login attempt
 - Injection SQL possible
 
-![Snort rules](./imgs/image-3.png)
+![Règles Snort](./imgs/image-3.png)
 
+### Objectif et principes de conception
+Les cinq règles activées dans `configs/snort/rules/local.rules` ont été sélectionnées pour trois objectifs complémentaires :
 
-### Purpose and design goals
-The five enabled rules in `configs/snort/rules/local.rules` were selected to serve three complementary purposes:
+1. **Représentativité** — chaque règle correspond à une classe d’événements de sécurité courants en environnement réel : reconnaissance réseau (ICMP, Nmap), sondes/exploits au niveau web/app (URI suspects, injection SQL) et tentatives d’accès/authentification (SSH).  
+2. **Simplicité opérationnelle** — des règles claires, basées signature, facilitent la validation du pipeline d’ingestion/alerte du SIEM (génération → normalisation → corrélation → triage).  
+3. **Extensibilité** — ces signatures servent de base qui peut être ajustée, contextualisée, ou remplacée par des détections comportementales à mesure que l’environnement mûrit.
 
-1. **Representativeness** — each rule corresponds to a common class of security-relevant event seen in real environments: network reconnaissance (ICMP, Nmap), web/application-level probes and exploits (suspicious URIs, SQL injection), and authentication/endpoint access attempts (SSH).  
-2. **Operational simplicity** — clear, signature-based rules make it easy to validate the SIEM ingestion and alerting pipeline (generation → normalization → correlation → triage).  
-3. **Extensibility** — these signatures form a baseline that can be tuned, contextualized, or replaced with behavior-based detections as the environment matures.
-
-These rules are representative rather than exhaustive. They provide immediate value for demonstrations, integration tests, and as a starting point for iterative improvements (tuning thresholds, adding context, reducing false positives).
+Ces règles sont représentatives plutôt qu’exhaustives. Elles apportent une valeur immédiate pour les démos, les tests d’intégration et comme point de départ pour des améliorations itératives (réglage des seuils, ajout de contexte, réduction des faux positifs).
 
 ---
 
-### Rule-by-rule justification
+### Justification règle par règle
 
 #### ICMP Ping detected  
-**Why:** ICMP echo requests are a canonical network discovery method used in reconnaissance.  
-**Value:** Low complexity and high signal for early-stage recon activities; useful to validate pipeline end-to-end and to raise early awareness of scanning activity.  
-**Limitations & tuning:** In managed environments ICMP can be noisy (monitoring tools, legitimate discovery). Mitigate with whitelists, rate thresholds, or by requiring multiple distinct hosts before promoting an alert.
+**Pourquoi :** Les requêtes ICMP echo sont un moyen de découverte réseau utilisé en reconnaissance.  
+**Valeur :** Faible complexité et bon signal pour les activités de reconnaissance en phase initiale ; utile pour valider le pipeline de bout en bout et élever l’attention sur le scanning.  
+**Limites & réglages :** En environnements gérés, l’ICMP peut être bruyant (outils de monitoring, découverte légitime). À mitiger via des listes blanches, des seuils de débit ou en exigeant plusieurs hôtes distincts avant d’alerter.
 
 #### TEST HTTP exploit in URI  
-**Why:** Malicious or scanner-generated URIs often carry exploit attempts or test payloads — probing application endpoints via the request path is a frequent attack vector.  
-**Value:** Detects automated scanners and naive exploit payloads; helps demonstrate correlation between network alerts and application logs.  
-**Limitations & tuning:** Attack payloads evolve quickly and can be obfuscated. Use this rule as an early-warning signal and complement it with application log parsing, WAF logs, or contextual checks (e.g., unexpected user agent, referrer).
+**Pourquoi :** Les URI malveillants contiennent parfois des tentatives d’exploit pour sonder des endpoints applicatifs via le chemin de requête.  
+**Valeur :** Détecte les scanners automatisés et les charges naïves ; aide à démontrer la corrélation entre alertes réseau et logs applicatifs.  
+**Limites & réglages :** Les charges évoluent vite et peuvent être obfusquées. Utiliser cette règle comme signal précoce et la compléter par l’analyse des logs applicatifs.
 
 #### Nmap TCP SYN Scan  
-**Why:** SYN scans are one of the most common methods for port discovery and are widely used in reconnaissance.  
-**Value:** High-fidelity indicator of active port scanning; often precedes more targeted activity and is valuable for incident prioritization.  
-**Limitations & tuning:** Legitimate inventory or monitoring systems can trigger this signature. Add contextual filters (known scanner hosts, maintenance windows) or correlate with asset-management data to reduce false positives.
+**Pourquoi :** Les SYN scans sont un moyen courant de découverte de ports et largement utilisés en reconnaissance.  
+**Valeur :** Indicateur fiable d’un scan actif ; précède souvent une activité plus ciblée et aide à prioriser les incidents.  
+**Limites & réglages :** Des outils légitimes d’inventaire/monitoring peuvent déclencher cette signature. Ajouter des filtres contextuels (scanners connus, fenêtres de maintenance) ou corréler avec les informations à disposition pour réduire les faux positifs.
 
 #### SSH login attempt  
-**Why:** SSH is a frequent target for brute-force, credential-stuffing, or opportunistic compromise attempts.  
-**Value:** Detecting authentication attempts enables early detection of unauthorized access attempts and supports immediate response actions (block, alert SOC).  
-**Limitations & tuning:** Single login attempts are noisy; evaluate by aggregating by source IP, counting failed attempts in a window, or correlating with geolocation/known-bad IP lists to prioritize true threats.
+**Pourquoi :** SSH est fréquemment ciblé (brute force, credential stuffing, opportunisme).  
+**Valeur :** Détecter les tentatives d’authentification permet une détection précoce des accès non autorisés et supporte des réponses immédiates (blocage, alerte SOC).  
+**Limites & réglages :** Une tentative unique est bruyante ; évaluer en agrégeant par IP source, en comptant les échecs sur une fenêtre, ou en corrélant avec la géolocalisation/listes IP malveillantes.
 
 #### Possible SQL injection  
-**Why:** SQL injection remains a critical application-layer threat; many attacks surface as suspicious SQL-like patterns contained in HTTP parameters or payloads.  
-**Value:** Identifies likely injection attempts and enables rapid follow-up investigation (review app logs, database access patterns).  
-**Limitations & tuning:** Simple pattern matches produce false positives (complex queries, encoded content, legitimate use of special characters). Combine with WAF events, parameter whitelisting, and downstream context (unusual DB queries, new accounts created) to improve precision.
+**Pourquoi :** L’injection SQL reste une menace critique au niveau applicatif ; beaucoup d’attaques apparaissent comme des motifs SQL suspects dans les paramètres/payloads HTTP.  
+**Valeur :** Identifie des tentatives probables d’injection et permet une investigation rapide (examiner logs applicatifs, accès base).  
+**Limites & réglages :** Les correspondances simples génèrent des faux positifs (requêtes complexes, contenu encodé, usages légitimes de caractères spéciaux). À combiner avec d'autres événements, des listes de paramètres autorisés et du contexte aval (requêtes DB inhabituelles, création de nouveaux comptes).
 
-
-### Overall trade-offs and rationale
-- **Simplicity vs. coverage:** These rules prioritize clear, explainable signatures that are easy to validate and debug. They intentionally do not attempt to cover every advanced obfuscation or sophisticated C2 pattern. That trade-off is deliberate: a simple, well-understood baseline is essential for validating a Mini SIEM’s pipelines and for teaching/assessment scenarios.  
-- **Detection chain demonstration:** Together the rules span the typical attack progression: discovery (ICMP, Nmap) → probe/exploit (HTTP URI, SQL patterns) → access attempts (SSH). This makes it straightforward to demonstrate correlation logic, alert enrichment, and escalation playbooks.  
-- **Extensibility:** Once baseline behavior and alert quality are established, move to more advanced capabilities: behavior-based detection (anomaly detection on baseline traffic), temporal correlation (e.g., scan followed by targeted exploit), reputation feeds, and integration of endpoint/application telemetry to reduce false positives and detect stealthier attacks.
+### Arbitrages et raisons globales
+- **Simplicité vs couverture :** Ces règles privilégient des signatures claires et explicables, faciles à valider et déboguer. Elles n’essaient pas de couvrir toutes les obfuscations avancées ou modèles C2 sophistiqués. C’est délibéré : une base simple et bien comprise est essentielle pour valider les pipelines d’un mini-SIEM comme le nôtre.  
+- **Chaîne de détection :** Ensemble, les règles couvrent une progression typique d’attaque : découverte (ICMP, Nmap) → probe/exploit (URI HTTP, motifs SQL) → tentatives d’accès (SSH). Cela facilite la démonstration de la corrélation, de l’enrichissement et des playbooks d’escalade.  
+- **Extensibilité :** Une fois la ligne de base établie, passer à des capacités avancées : détection comportementale (anomalies), corrélation temporelle (ex. scan suivi d’un exploit ciblé), mesures sur l'endpoint/app pour réduire les faux positifs et détecter les attaques furtives.
 
 ---
 
 ### 1) ICMP Ping detected — SID 1000001
-Rule:
+Règle :
 ```snort
 alert icmp any any -> any any (msg:"ICMP Ping detected"; sid:1000001; rev:1;)
 ```
-- **Explanation**: Triggers on any ICMP packet (e.g., ping/echo) observed on the host.
-- **How it’s detected**: Packet type ICMP. No other conditions.
-- **Reproduce (from another machine on same network)**:
+- **Explication** : Déclenche sur tout paquet ICMP (ex. ping/echo) observé sur l’hôte.
+- **Comment c’est détecté** : Type de paquet ICMP. Pas d’autre condition.
+- **Reproduire (depuis une autre machine du même réseau)** :
   ```bash
   ping -c 5 VM_IPV4           # IPv4
-  # or
+  # ou
   ping -6 -c 5 VM_IPV6        # IPv6
   ```
-- **Snort alert example** (from `logs/snort/alert_fast.txt`):
+- **Exemple d’alerte Snort** :
   ```text
   09/12-17:25:31.426992  [**] [1:1000001:1] ICMP Ping detected [**] [Priority: 0] {IPV6-ICMP} 192.168.122.1 -> 192.168.122.95
   ```
-- **How to read it**: 192.168.122.1 is the source IP (attacker), 192.168.122.95 is the destination IP (target)
-- **Kibana**: Search `message: "ICMP Ping detected"`.
-- **Screenshot placeholder**: ![ICMP Ping alert](./imgs/image-4.png)
+- **Comment le lire** : 192.168.122.1 est l’IP source (attaquant), 192.168.122.95 l’IP destination (cible)
+- **Kibana** : Rechercher `message: "ICMP Ping detected"`.
+- **Capture d’écran** : ![Alerte ICMP Ping](./imgs/image-4.png)
 
 ---
 
 ### 2) TEST HTTP exploit in URI — SID 1000002
-Rule:
+Règle :
 ```snort
 alert tcp any any -> any [80,8080] (
     msg:"TEST HTTP exploit in URI";
     content:"exploit="; http_uri;
     sid:1009001; rev:2; )
 ```
-- **Explanation**: Flags HTTP requests that contain the parameter `exploit=` in the URI.
-- **How it’s detected**: Looks for `exploit=` in the HTTP URI on ports 80 or 8080.
-- **Test app**: `http://VM_IP:8080/index.php` (see `configs/web/index.php`).
-- **Reproduce**:
+- **Explication** : Signale les requêtes HTTP qui contiennent le paramètre `exploit=` dans l’URI.
+- **Comment c’est détecté** : Recherche `exploit=` dans l’URI HTTP sur les ports 80 ou 8080.
+- **Appli de test** : `http://VM_IP:8080/index.php` (voir `configs/web/index.php`).
+- **Reproduire** :
   ```bash
   curl -i "http://VM_IP:8080/index.php?exploit=test"
   ```
-- **Snort alert example**:
+- **Exemple d’alerte Snort** :
   ```text
   09/13-16:48:15.952432  [**] [1:1000002:2] TEST HTTP exploit in URI [**] [Priority: 0] {TCP} 192.168.122.1:53250 -> 192.168.122.95:8080
   ```
-- **How to read it**: 192.168.122.1 is the source IP (attacker), 192.168.122.95 is the destination IP (target)
-- **Kibana**: Search `message: "TEST HTTP exploit in URI"`.
-- **Screenshot placeholder**: ![HTTP Exploit Alert](./imgs/image-5.png)
+- **Comment le lire** : 192.168.122.1 est l’IP source (attaquant), 192.168.122.95 l’IP destination (cible)
+- **Kibana** : Rechercher `message: "TEST HTTP exploit in URI"`.
+- **Capture d’écran** : ![Alerte HTTP Exploit](./imgs/image-5.png)
 
 ---
 
 ### 3) Nmap TCP SYN Scan — SID 1000003
-Rule:
+Règle :
 ```snort
 alert tcp any any -> any any (flags:S; msg:"Nmap TCP SYN Scan"; sid:1000003; rev:1;)
 ```
-- **Explanation**: Triggers on TCP packets with SYN flag (typical of SYN scans).
-- **How it’s detected**: Looks for SYN-only packets hitting any destination port.
-- **Reproduce** (from another machine):
+- **Explication** : Déclenche sur des paquets TCP avec le flag SYN (typique des SYN scans).
+- **Comment c’est détecté** : Recherche des paquets SYN seuls vers n’importe quel port destination.
+- **Reproduire** (depuis une autre machine) :
   ```bash
   nmap -sS VM_IP
   ```
-- **Snort alert example**:
+- **Exemple d’alerte Snort** :
   ```text
   09/13-16:57:42.554678  [**] [1:1000003:1] Nmap TCP SYN Scan [**] [Priority: 0] {TCP} 192.168.122.1:56910 -> 192.168.122.95:80
   ```
-- **How to read it**: 192.168.122.1 is the source IP (attacker), 192.168.122.95 is the destination IP (target)
-- **Kibana**: Search `message: "Nmap TCP SYN Scan"`.
-- **Screenshot placeholder**: ![Nmap SYN Scan Alert](./imgs/image-6.png)
+- **Comment le lire** : 192.168.122.1 est l’IP source (attaquant), 192.168.122.95 l’IP destination (cible)
+- **Kibana** : Rechercher `message: "Nmap TCP SYN Scan"`.
+- **Capture d’écran** : ![Alerte Nmap SYN Scan](./imgs/image-6.png)
 
 ---
 
 ### 4) SSH login attempt — SID 1000004
-Rule:
+Règle :
 ```snort
 alert tcp any any -> any 22 (msg:"SSH login attempt"; flow:to_server,established; content:"SSH-"; nocase; sid:1009004; rev:1;)
 ```
-- **Explanation**: Triggers when an SSH banner exchange is detected on port 22.
-- **How it’s detected**: TCP to port 22 with `SSH-` sequence in an established flow.
-- **Reproduce** (from another machine):
+- **Explication** : Déclenche quand un échange de bannière SSH est détecté sur le port 22.
+- **Comment c’est détecté** : TCP vers le port 22 avec la séquence `SSH-` dans un flux établi.
+- **Reproduire** (depuis une autre machine) :
   ```bash
   ssh YOUR_USER@VM_IP
   ```
-- **Snort alert example**:
+- **Exemple d’alerte Snort** :
   ```text
   09/13-16:53:07.114324  [**] [1:1000004:1] SSH login attempt [**] [Priority: 0] {TCP} 192.168.122.1:56706 -> 192.168.122.95:22
   ```
-- **How to read it**: 192.168.122.1 is the source IP (attacker), 192.168.122.95 is the destination IP (target)
-- **Kibana**: Search `message: "SSH login attempt"`.
-- **Screenshot placeholder**: ![SSH Login Attempt Alert](./imgs/image-7.png)
+- **Comment le lire** : 192.168.122.1 est l’IP source (attaquant), 192.168.122.95 l’IP destination (cible)
+- **Kibana** : Rechercher `message: "SSH login attempt"`.
+- **Capture d’écran** : ![Alerte SSH Login Attempt](./imgs/image-7.png)
 
 ---
 
 ### 5) Injection SQL possible — SID 1000005
-Rule:
+Règle :
 ```snort
 alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT"; http_uri; nocase; sid:1000008; rev:1;)
 ```
-- **Explanation**: Flags HTTP requests whose URI includes `UNION SELECT` (classic SQLi pattern).
-- **How it’s detected**: Looks for `UNION SELECT` in the HTTP URI to port 80.
-- **Note**: Even if you hit `http://VM_IP:8080/...`, Docker NAT sends traffic to container port 80; Snort (on host) typically also sees the bridged `-> 172.x.x.x:80` flow.
-- **Reproduce**:
+- **Explication** : Signale les requêtes HTTP dont l’URI contient `UNION SELECT` (motif SQLi classique).
+- **Comment c’est détecté** : Recherche `UNION SELECT` dans l’URI HTTP vers le port 80.
+- **Note** : Même si vous tapez `http://VM_IP:8080/...`, la NAT Docker envoie vers le port 80 du conteneur ; Snort (sur l’hôte) voit typiquement aussi le flux ponté `-> 172.x.x.x:80`.
+- **Reproduire** :
   ```bash
   curl -i "http://VM_IP:8080/index.php?q=UNION%20SELECT%201,2"
   ```
-- **Snort alert example**:
+- **Exemple d’alerte Snort** :
   ```text
   09/13-17:16:25.117832  [**] [1:1000005:1] Injection SQL possible [**] [Priority: 0] {TCP} 192.168.122.1:60690 -> 192.168.122.95:80
   ```
-- **How to read it**: 192.168.122.1 is the source IP (attacker), 192.168.122.95 is the destination IP (target)
-- **Kibana**: Search `message: "Injection SQL possible"`.
-- **Screenshot placeholder**: ![SQL Injection Alert](./imgs/image-8.png)
+- **Comment le lire** : 192.168.122.1 est l’IP source (attaquant), 192.168.122.95 l’IP destination (cible)
+- **Kibana** : Rechercher `message: "Injection SQL possible"`.
+- **Capture d’écran** : ![Alerte SQL Injection](./imgs/image-8.png)
 
-
-## How Logs Flow
-- Snort config: `configs/snort/snort.conf`
-  - Key outputs:
+## Flux des journaux
+- Config Snort : `configs/snort/snort.conf`
+  - Sorties clés :
     ```
     output alert_fast: /var/log/snort/alert_fast.txt
     output unified2: filename snort.log, limit 128
     ```
-  - Includes `include /etc/snort/rules/local.rules`.
+  - Inclut `include /etc/snort/rules/local.rules`.
 
-- Filebeat config: `configs/filebeat.yml`
-  - Inputs:
+- syslog-ng : `configs/syslog-ng.conf`
+  - Écoute et écrit dans `/var/log/syslog-ng/all.log`.
+
+- Config Filebeat : `configs/filebeat.yml`
+  - Entrées :
     ```yaml
     filebeat.inputs:
       - type: log
         enabled: true
         paths:
-          - /var/log/snort/alert_fast.txt
+          - /var/log/syslog-ng/all.log
         scan_frequency: 10s
         tail_files: true
     ```
-  - Output:
+  - Sortie :
     ```yaml
     output.elasticsearch:
       hosts: ["http://elasticsearch:9200"]
     setup.kibana:
       host: "http://kibana:5601"
     ```
-  - Notes: We ship raw lines; query on the `message` field in Kibana.
-  By specifying the "message" field, we can have a more digestible view of the alerts in Kibana. It is possible to add more fields to the data view.
+  - Notes : On expédie des lignes brutes ; interrogez le champ `message` dans Kibana.
+  En spécifiant le champ "message", on obtient une vue plus digeste des alertes dans Kibana. Il est possible d’ajouter plus de champs à la data view.
   
-  ![Kibana "message" field](./imgs/image-9.png)
-
-- syslog-ng: `configs/syslog-ng.conf`
-  - Listens on 514/udp and 601/tcp, writes to `/var/log/hostlogs/$HOST_FROM.log`.
+  ![Champ "message" Kibana](./imgs/image-9.png)
 
 
-
-## Operations
-- **Check status**
+## Opérations
+- **Vérifier l’état**
   ```bash
   docker ps
   docker compose ps
@@ -368,69 +358,62 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
   docker compose logs -f snort
   ```
 
-- **Tail Snort alerts directly**
+- **Suivre les alertes Snort directement**
   ```bash
   tail -f logs/snort/alert_fast.txt
   ```
 
-- **Start / Stop**
+- **Démarrer / Arrêter**
   ```bash
   docker compose up -d
   docker compose down
   ```
 
-- **Full reset (wipes Elasticsearch data!)**
+- **Remise à zéro complète (efface les données Elasticsearch !)**
   ```bash
-  docker compose down -v   # removes volumes including esdata
-  rm -rf logs/snort/*      # optional: clear Snort logs
+  docker compose down -v   # supprime les volumes dont esdata
+  rm -rf logs/snort/*      # optionnel : vider les logs Snort
   ```
 
-- **Update rules**
-  - Edit `configs/snort/rules/local.rules`.
-  - Restart Snort:
+- **Mettre à jour les règles**
+  - Éditer `configs/snort/rules/local.rules`.
+  - Redémarrer Snort :
     ```bash
     docker compose restart snort
     ```
 
+## Dépannage
+- **Elasticsearch ne démarre pas / rouge ou instable**
+  - Allouer plus de RAM/CPU à la VM. Le heap ES est à 1 Go ; 4 Go+ de RAM système sont recommandés pour la VM.
 
-## Troubleshooting
-- **Elasticsearch not starting / red or unhealthy**
-  - Give the VM more RAM/CPU. ES heap is set to 1GB; 4GB+ system RAM is recommended for the VM.
+- **Erreur de permission sur la config Filebeat**
+  - L’installateur exécute `chmod go-w ./configs/filebeat.yml` car Filebeat refuse les configs accessibles en écriture par le groupe.
 
-- **Permission error on Filebeat config**
-  - The installer sets `chmod go-w ./configs/filebeat.yml` because Filebeat refuses group-writable configs.
+- **Kibana inaccessible**
+  - Vérifier `docker compose logs kibana` et `elasticsearch`.
+  - Assurez-vous que votre poste et la VM sont sur le même réseau ; ouvrir `http://VM_IP:5601` depuis le poste.
 
-- **Kibana not reachable**
-  - Check `docker compose logs kibana` and `elasticsearch`.
-  - Ensure your desktop and VM are on the same network; open `http://VM_IP:5601` from the desktop.
+- **Pas d’alertes dans Kibana**
+  - Générer du trafic via le carnet ci-dessus (ping, curl, ssh, nmap).
+  - Suivre `logs/snort/alert_fast.txt` pour confirmer que Snort déclenche.
+  - Vérifier les logs Filebeat pour des erreurs d’expédition : `docker compose logs -f filebeat`.
 
-- **No alerts in Kibana**
-  - Generate traffic using the playbook above (ping, curl, ssh, nmap).
-  - Tail `logs/snort/alert_fast.txt` to confirm Snort is firing.
-  - Check Filebeat logs for shipping errors: `docker compose logs -f filebeat`.
+- **Les derniers logs n’apparaissent pas dans Kibana**
+  - Dans Kibana, réglez la plage temporelle (en haut à droite) pour que le champ « To » soit sur Now (utilisez une plage relative comme « Last 15 minutes »). Si « To » est un horodatage figé dans le passé, les nouveaux événements n’apparaîtront pas. Vous pouvez activer l’auto-rafraîchissement (ex. toutes les 10s).
 
-- **Security note**
-  - Elasticsearch security is disabled for simplicity; do not expose ports 9200/5601 to the internet.
+## Personnaliser / Étendre
+- **Ajouter des règles Snort** : Placez-les dans `configs/snort/rules/local.rules`.
+- **Tableaux de bord** : Construisez des visualisations Kibana sur `filebeat-*` (ex. top signatures, sources, destinations).
 
-- **Latest logs not visible in Kibana**
-  - In Kibana, set the time range (top-right) so the To value is Now (use a relative range like “Last 15 minutes”). If the To is a fixed timestamp in the past, new events won’t appear. Optionally enable Auto-refresh (e.g., every 10s).
-
-
-## Customize / Extend
-- **Add more Snort rules**: Put them into `configs/snort/rules/local.rules`.
-- **Dashboards**: Build Kibana visualizations on top of `filebeat-*` (e.g., top signatures, sources, destinations).
-
-
-## Credits
-- **Authors**:
+## Crédits
+- **Auteurs** :
   - Axel GROGNET
   - Lucas PERROT
   - Tim QUEFFURUS
-- **University / Class / Teacher**: Université du Québec à Chicoutimi / Sécurité Informatique / Fehmi JAAFAR
-- **Install script**: `install.sh` installs Docker Engine + Compose plugin, enables Docker, adds user to `docker` group, fixes Filebeat config permissions.
+- **Université / Cours / Enseignant** : Université du Québec à Chicoutimi / Sécurité Informatique / Fehmi JAAFAR
 
 
-## Appendix — File/Path Reference
+## Annexe — Références fichiers/chemins
 - `docker-compose.yml`
 - `configs/snort/snort.conf`
 - `configs/snort/rules/local.rules`
@@ -438,3 +421,4 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
 - `configs/syslog-ng.conf`
 - `configs/web/index.php`
 - `logs/snort/alert_fast.txt`
+- `install.sh` : installe Docker Engine + plugin Compose, active Docker, ajoute l’utilisateur au groupe `docker`, corrige les permissions de la config Filebeat.
