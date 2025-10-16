@@ -353,9 +353,8 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
 - **Vérifier l’état**
   ```bash
   docker ps
-  docker compose ps
-  docker compose logs -f filebeat
-  docker compose logs -f snort
+  docker logs filebeat
+  docker logs snort
   ```
 
 - **Suivre les alertes Snort directement**
