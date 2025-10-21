@@ -66,7 +66,7 @@ services:
     container_name: web
     volumes:
       - ./configs/web/:/var/www/html/:ro
-      - ./logs/syslog-ng:/var/log/syslog-ng  # <-- on monte le même dossier que syslog-ng
+      - ./logs/syslog-ng:/var/log/syslog-ng
     ports:
       - "8080:80"
     restart: unless-stopped
