@@ -1,6 +1,12 @@
 # My_SIEM — SIEM ELK + Snort (Debian 13)
 *Comme convenu, ce README présente également le rapport de notre travail*
 
+- **Auteurs** :
+  - Axel GROGNET
+  - Lucas PERROT
+  - Tim QUEFFURUS
+
+
 Un SIEM entièrement conteneurisé que vous pouvez exécuter sur une VM Debian 13. Il relie la détection réseau de Snort à Elasticsearch via Filebeat, avec Kibana pour la visualisation. Il inclut une petite application web vulnérable pour générer facilement du trafic de test et valider les règles.
 
 ## Table des matières
