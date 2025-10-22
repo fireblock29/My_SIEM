@@ -1,13 +1,19 @@
 # My_SIEM — SIEM ELK + Snort (Debian 13)
 *Comme convenu, ce README présente également le rapport de notre travail*
 
+
+
 - **Auteurs** :
   - Axel GROGNET
   - Lucas PERROT
   - Tim QUEFFURUS
 
 
-Un SIEM entièrement conteneurisé que vous pouvez exécuter sur une VM Debian 13. Il relie la détection réseau de Snort à Elasticsearch via Filebeat, avec Kibana pour la visualisation. Il inclut une petite application web vulnérable pour générer facilement du trafic de test et valider les règles.
+Dans un contexte où les cyberattaques se multiplient et deviennent de plus en plus sophistiquées, la surveillance et la détection des incidents de sécurité sont devenues des enjeux majeurs pour toute infrastructure informatique. Les systèmes d’information doivent être capables non seulement de collecter et de centraliser les événements produits par les différents équipements, mais aussi d’en extraire des informations pertinentes pour identifier rapidement les menaces.
+
+C’est dans cette optique que ce projet vise à mettre en place un SIEM (Security Information and Event Management) complet à l’aide d’une architecture basée sur des conteneurs Docker. Cette solution combine plusieurs outils open source — Snort, Syslog-ng, Filebeat, Elasticsearch et Kibana — afin d’assurer la collecte, l’analyse et la visualisation centralisée des logs de sécurité.
+
+L’objectif principal de ce projet est de concevoir une plateforme simple, fonctionnelle et évolutive permettant de détecter les événements suspects sur un réseau, tout en offrant une interface claire pour leur interprétation. Ce travail s’inscrit dans une démarche d’apprentissage pratique des outils de cybersécurité et de compréhension du fonctionnement global d’un SIEM moderne.
 
 ## Table des matières
 - **[Aperçu](#aperçu)**
@@ -23,6 +29,8 @@ Un SIEM entièrement conteneurisé que vous pouvez exécuter sur une VM Debian 1
 - **[Crédits](#crédits)**
 
 ## Aperçu
+Un SIEM (Security Information and Event Management) est une solution informatique qui **collecte**, **centralise**, **analyse** et **corrèle** __en temps réel__ les journaux et événements de sécurité provenant de différents systèmes (serveurs, pare-feux, applications, etc.) afin de **détecter les incidents, identifier les menaces** et **aider à la réponse** aux attaques informatiques.
+
 Ce projet fournit un SIEM minimal :
 - **IDS réseau** : Snort (journalise dans `alert_fast.txt`).
 - **Collecteur Syslog** : syslog-ng (écoute et écrit dans le fichier `all.log`).
@@ -59,39 +67,45 @@ Liens clés :
 Définis dans `docker-compose.yml` :
 
 - **elasticsearch** (`docker.elastic.co/elasticsearch/elasticsearch:8.9.0`)
+  - Moteur de recherche et d’analyse qui stocke et indexe les logs collectés.
   - Ports : `9200:9200`
   - Heap : `ES_JAVA_OPTS=-Xms1g -Xmx1g`
   - Volume de données : `esdata` -> `/usr/share/elasticsearch/data`
 
 - **kibana** (`docker.elastic.co/kibana/kibana:8.9.0`)
+  - Interface web permettant de visualiser et d’explorer les données stockées dans Elasticsearch.
   - Ports : `5601:5601`
   - Env : `ELASTICSEARCH_HOSTS=http://elasticsearch:9200`
 
 - **snort** (`frapsoft/snort`)
+  - Système de détection d’intrusion (IDS) qui analyse le trafic réseau pour repérer des activités suspectes.
   - S’exécute avec `network_mode: host` pour sniffer toutes les interfaces
   - Config : `./configs/snort/snort.conf` inclut `./configs/snort/rules/local.rules`
   - Sortie : `alert_fast: /var/log/snort/alert_fast.txt`
   - Volume : `./logs/snort:/var/log/snort`
 
 - **syslog-ng** (`balabit/syslog-ng:latest`)
+  - Collecteur centralisé de logs qui reçoit et enregistre les journaux système provenant de différentes sources.
   - Config : `./configs/syslog-ng.conf`
   - Écrit les logs hôtes sous `/var/log/syslog-ng/all.log` (dans le conteneur)
 
 - **filebeat** (`docker.elastic.co/beats/filebeat:8.9.0`)
+  - Agent qui lit les fichiers de logs et les envoie vers Elasticsearch pour analyse.
   - Config : `./configs/filebeat.yml`
   - Lit : `/var/log/snort/alert_fast.txt`
   - Envoie vers : `http://elasticsearch:9200`
 
 - **web** (`php:8.1-apache`)
+  - Application vulnérable pour tester le SIEM
   - Ports : `8080:80`
   - Sert `./configs/web/index.php`
   - Pour générer du trafic HTTP bénin + suspect (démo uniquement)
 
 ## Démarrage rapide (testé sur Debian 13)
 Procédure suivie et validée sur une VM Debian 13 neuve.
-Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installation_VM.md](Installation_VM.md).   
+Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installation_VM.md](Installation_VM.md).
 
-0. **Passer root**
+0. **Obtenir un accès, ou Ouvrir, terminal. Passer root**
    ```bash
    su
    ```
@@ -121,7 +135,7 @@ Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installatio
    cd ~/My_SIEM
    docker compose up -d
    ```
-6. **Attendre** que les images soient tirées et les conteneurs en bonne santé. Le premier lancement peut être long. Attendre ensuite ~60s le temps que les services se stabilisent.
+6. **Attendre** que les images soient téléchargées et que les conteneurs soit en marche. Le premier lancement peut être long. Attendre ensuite ~60s le temps que les services se stabilisent.
 
 7. **Ouvrir Kibana** depuis votre poste (sur le même réseau) :
    - URL : `http://VM_IP:5601`
@@ -129,6 +143,9 @@ Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installatio
 ![Visualisation Kibana](./imgs/image.png)
 
 ## Configuration de Kibana (premier lancement)
+
+Kibana joue un rôle essentiel dans le SIEM en offrant une interface visuelle claire et interactive pour exploiter les données collectées. Connecté à Elasticsearch, il permet d’afficher, filtrer et analyser facilement les logs provenant de Snort, via Syslog-ng. Grâce à ses tableaux de bord dynamiques, Kibana transforme les journaux bruts en graphiques, cartes, chronologies et statistiques compréhensibles, facilitant ainsi la détection d’anomalies, le suivi des alertes et l’investigation des incidents de sécurité. Il agit comme la vitrine du SIEM, rendant la surveillance et l’analyse des événements visuelles, rapides et efficaces.
+
 1. Cliquer sur « Explore on my own ».
 2. Ouvrir le menu (en haut à gauche) → « Discover ».
 3. Cliquer sur « Create data view ».
@@ -142,6 +159,9 @@ Pour un tutoriel d'installation d'une VM Debian 13, voir le fichier [Installatio
 Astuce : Vous chercherez principalement dans le champ `message` (ligne d’alerte Snort brute), par ex. `message: "Nmap TCP SYN Scan"`.
 
 ## Configuration du tableau de bord Kibana
+
+Nous vous proposons un tableau de bord pré-fabriqué. Vous pouvez l'utiliser en suivant la procédure ci-dessous.
+
 1. Ouvrir le menu (en haut à gauche) → « Stack Management ».
 2. Cliquer sur « Saved Objects ».
 3. Cliquer sur « Import ».
@@ -155,6 +175,9 @@ Bien sûr, vous pouvez créer votre propre dashboard et l’enregistrer. Ici, on
 ![My_Dash](./imgs/image-10.png)
 
 ## Règles Snort — Carnet de tests avec commandes de repro
+
+Snort constitue le cœur de la détection d’intrusion dans le SIEM. Cet outil analyse en temps réel le trafic réseau qui circule sur les interfaces de la machine afin d’identifier des comportements suspects ou malveillants, tels que des scans de ports, des tentatives d’exploitation ou des attaques connues. Grâce à ses règles de détection personnalisables, Snort compare chaque paquet réseau à une base de signatures pour générer des alertes précises lorsqu’une activité anormale est détectée. Ces alertes sont ensuite enregistrées et transmises vers Elasticsearch via Filebeat, permettant à Kibana de les afficher clairement. Snort agit comme le capteur de sécurité du SIEM, chargé de repérer et signaler toute menace potentielle.
+
 Les règles actives sont dans `configs/snort/rules/local.rules`. Les 5 règles suivantes sont activées.
 
 - ICMP Ping detected
@@ -407,9 +430,11 @@ alert tcp any any -> any 80 (msg:"Injection SQL possible"; content:"UNION SELECT
 - **Les derniers logs n’apparaissent pas dans Kibana**
   - Dans Kibana, réglez la plage temporelle (en haut à droite) pour que le champ « To » soit sur Now (utilisez une plage relative comme « Last 15 minutes »). Si « To » est un horodatage figé dans le passé, les nouveaux événements n’apparaîtront pas. Vous pouvez activer l’auto-rafraîchissement (ex. toutes les 10s).
 
-## Personnaliser / Étendre
+## Pour aller plus loin
+- **Modifier les règles existantes** pour les rendre plus robustes : Modifiez le fichier `configs/snort/rules/local.rules`.
 - **Ajouter des règles Snort** : Placez-les dans `configs/snort/rules/local.rules`.
-- **Tableaux de bord** : Construisez des visualisations Kibana sur `filebeat-*` (ex. top signatures, sources, destinations).
+- **Intégrer des règles de corrélation** entre plusieurs sources de logs dans Elasticsearch (ex. : alerte si une même IP déclenche plusieurs types d’événements).
+- **Automatiser la génération de rapports de sécurité** (quotidiens, hebdomadaires) à partir des données d’Elasticsearch.
 
 ## Crédits
 - **Auteurs** :
